@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModelDokter {
-    public ArrayList<Dokter> dokters;
+    private ArrayList<Dokter> dokters;
     ModelGSON modelGSON;
 
     public ModelDokter(){
         modelGSON = new ModelGSON("src/database/dokter.json");
 
-        this.dokters = modelGSON.readFromFile(new TypeToken<ArrayList<Dokter>>() {
+        dokters = modelGSON.readFromFile(new TypeToken<ArrayList<Dokter>>() {
         }.getType());
         if (dokters == null){
             this.dokters = new ArrayList<>();
