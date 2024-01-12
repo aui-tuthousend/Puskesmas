@@ -1,12 +1,12 @@
 package node;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Poli {
     public int idPoli;
     public String namaPoli;
-    List<Dokter> dokters;
-    public List<Queue> queues;
+    public ArrayList<Dokter> dokters;
+    public ArrayList<Queue> queues;
 
     public Poli(int idPoli, String namaPoli) {
         this.idPoli = idPoli;
@@ -22,7 +22,7 @@ public class Poli {
     }
 
     public void viewPoli(){
-        System.out.println("List Dokter Poli "+namaPoli);
+        System.out.println("List Dokter Poli "+namaPoli+" :");
         for (Dokter dokter: dokters){
             dokter.viewDokter();
         }

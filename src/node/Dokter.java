@@ -1,12 +1,12 @@
 package node;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Dokter {
     public int idDokter;
     public String namaDokter;
     public Poli poli;
-    public List<Schedule> schedules;
+    public ArrayList<Schedule> schedules;
 
     public Dokter(int idDokter, String namaDokter, Poli poli) {
         this.idDokter = idDokter;
