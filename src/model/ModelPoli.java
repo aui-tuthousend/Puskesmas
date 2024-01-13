@@ -66,13 +66,4 @@ public class ModelPoli {
         }
     }
 
-    public static void main(String[] args) {
-        ModelPoli modelPoli = new ModelPoli();
-//        ModelDokter modelDokter = new ModelDokter();
-        Poli polie = new Poli(2, "Gigi");
-        modelPoli.addPolisModel(polie);
-//        Dokter dokter = new Dokter(1, "uLar", polie.namaPoli);
-//        modelDokter.addDokterModel(dokter);
-//        polie.dokters.add(dokter);
-    }
 }
