@@ -15,8 +15,9 @@ public class Transaction {
 
     public void viewTransaction(){
         System.out.println("      Detail Transaksi");
-        System.out.println("Nomor Antrean: " + antrean.index);
-        System.out.println("Nama Pasien  : " + pasien.namaPasien);
-        System.out.println("Poli         : " + poli.namaPoli);
+        System.out.println("Nomor Antrean : " + antrean.index);
+        System.out.println("Nama Pasien   : " + pasien.namaPasien);
+        System.out.println("NIK Pasien    : " + pasien.NIK);
+        System.out.println("Poli          : " + poli.namaPoli);
     }
 }
