@@ -1,9 +1,9 @@
 package node;
 
 public class Schedule {
-    String hari;
-    String jam;
-    String namaDoketer;
+    public String hari;
+    public String jam;
+    public String namaDoketer;
 
     public Schedule(String hari, String jam, String namaDoketer) {
         this.hari = hari;
