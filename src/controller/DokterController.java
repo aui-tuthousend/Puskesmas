@@ -5,9 +5,16 @@ import model.ModelSchedule;
 import node.Dokter;
 import node.Schedule;
 
+import java.util.ArrayList;
+
 public class DokterController {
     ModelDokter modelDokter;
     ModelSchedule modelSchedule;
+
+    public DokterController() {
+        this.modelDokter = new ModelDokter();
+        this.modelSchedule = new ModelSchedule();
+    }
 
     public void addDokter(String nama, String poli){
         int id = modelDokter.getLastCode();
@@ -25,5 +32,11 @@ public class DokterController {
         Schedule schedule = new Schedule(id, hari, jam, dokter.namaDokter);
         modelDokter.addScheduleDoctor(idDokter, schedule);
         modelSchedule.addSchedule(schedule);
+    }
+
+    public ArrayList<Schedule> viewDoctorSchedule(String day){
+        ArrayList<Schedule> schedules = modelSchedule.getDaySchedules(day);
+
+        return schedules;
     }
 }

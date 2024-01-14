@@ -57,6 +57,10 @@ public class ModelPoli {
 
     public int getLastQueueIndex(int id){
         Poli poli = searchPoli(id);
+        if (poli.queues.isEmpty()){
+            return 0;
+        }
+
         return poli.queues.size();
     }
     public void viewPoliDokter(int id){
