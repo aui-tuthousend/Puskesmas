@@ -39,4 +39,13 @@ public class ModelSchedule {
         }
         return result;
     }
+
+    public Schedule searchSchedule(int id){
+        for (Schedule schedule: schedules){
+            if (schedule.idSchedule == id){
+                return schedule;
+            }
+        }
+        return null;
+    }
 }
