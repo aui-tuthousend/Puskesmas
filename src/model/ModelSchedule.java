@@ -21,7 +21,7 @@ public class ModelSchedule {
         }
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("\nShutting down. Saving data to JSON file...");
+//            System.out.println("\nShutting down. Saving data to JSON file...");
             modelGSON.writeToFile(schedules);
         }));
     }
@@ -47,5 +47,15 @@ public class ModelSchedule {
             }
         }
         return null;
+    }
+
+    public int getLastCode(){
+        int idx;
+        if(schedules.isEmpty()) {
+            return -1;
+        } else {
+            idx = schedules.size() - 1;
+            return schedules.get(idx).idSchedule;
+        }
     }
 }

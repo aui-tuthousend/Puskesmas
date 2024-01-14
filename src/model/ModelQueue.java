@@ -21,7 +21,7 @@ public class ModelQueue {
         }
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("\nShutting down. Saving data to JSON file...");
+//            System.out.println("\nShutting down. Saving data to JSON file...");
             modelGSON.writeToFile(queues);
         }));
     }
