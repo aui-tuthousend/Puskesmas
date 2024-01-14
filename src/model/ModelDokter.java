@@ -6,7 +6,6 @@ import node.Dokter;
 import node.Schedule;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ModelDokter {
     private ArrayList<Dokter> dokters;

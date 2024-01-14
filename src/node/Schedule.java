@@ -3,10 +3,12 @@ package node;
 public class Schedule {
     String hari;
     String jam;
+    String namaDoketer;
 
-    public Schedule(String hari, String jam) {
+    public Schedule(String hari, String jam, String namaDoketer) {
         this.hari = hari;
         this.jam = jam;
+        this.namaDoketer = namaDoketer;
     }
 
     public void viewJadwal(){
