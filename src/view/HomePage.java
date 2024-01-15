@@ -8,10 +8,10 @@ public class HomePage extends JFrame {
     public HomePage(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
-        setVisible(true);
         setLayout(null);
         setResizable(false);
         components();
+        setVisible(true);
     }
 
     public void components(){
@@ -42,7 +42,9 @@ public class HomePage extends JFrame {
 
     }
     public void daftarPasienView(){
-
+        RegisPasien regisPasien = new RegisPasien();
+        this.setVisible(false);
+        regisPasien.setVisible(true);
     }
 
     public void ambilAntreanView(){
