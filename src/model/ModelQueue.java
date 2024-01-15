@@ -2,10 +2,10 @@ package model;
 
 import com.google.gson.reflect.TypeToken;
 import modelGSON.ModelGSON;
+import node.Queue;
 import node.Schedule;
 
 import java.util.ArrayList;
-import java.util.Queue;
 
 public class ModelQueue {
     private ArrayList<node.Queue> queues;
