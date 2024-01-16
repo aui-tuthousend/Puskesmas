@@ -70,4 +70,10 @@ public class ModelPoli {
         }
     }
 
+    public void viewAllPoli(){
+        for (Poli poli: polis){
+            poli.viewPoli();
+        }
+    }
+
 }

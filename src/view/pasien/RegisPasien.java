@@ -1,4 +1,6 @@
-package view;
+package view.pasien;
+
+import view.HomePage;
 
 import javax.swing.*;
 

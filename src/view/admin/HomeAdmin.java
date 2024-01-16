@@ -1,4 +1,6 @@
-package view;
+package view.admin;
+
+import view.HomePage;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -51,18 +53,16 @@ public class HomeAdmin extends JFrame {
     }
 
     public void actionHandler(){
-        buttons.get(0).addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
+        buttons.get(0).addActionListener(e ->{
+            ListPoli listPoli = new ListPoli();
+            this.setVisible(false);
+            listPoli.setVisible(true);
         });
 
-        buttons.get(1).addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
+        buttons.get(1).addActionListener(e ->{
+            ListDokter listDokter = new ListDokter();
+            this.setVisible(false);
+            listDokter.setVisible(true);
         });
 
         buttons.get(2).addActionListener(new ActionListener() {

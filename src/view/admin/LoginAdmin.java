@@ -1,15 +1,17 @@
-package view;
+package view.admin;
+
+import view.HomePage;
 
 import javax.swing.*;
 
-public class LoginView extends JFrame {
+public class LoginAdmin extends JFrame {
     JTextField uname;
     JLabel label;
 
     JPasswordField pass;
 
 
-    public LoginView(){
+    public LoginAdmin(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);

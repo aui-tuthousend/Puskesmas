@@ -1,7 +1,10 @@
 package view;
 
+import view.admin.LoginAdmin;
+import view.pasien.LoginPasien;
+import view.pasien.RegisPasien;
+
 import javax.swing.*;
-import java.awt.*;
 
 public class HomePage extends JFrame {
 
@@ -48,11 +51,13 @@ public class HomePage extends JFrame {
     }
 
     public void ambilAntreanView(){
-
+        LoginPasien loginPasien = new LoginPasien();
+        this.setVisible(false);
+        loginPasien.setVisible(true);
     }
 
     public void loginAdminView(){
-        LoginView loginView = new LoginView();
+        LoginAdmin loginView = new LoginAdmin();
         this.setVisible(false);
         loginView.setVisible(true);
     }

@@ -40,4 +40,8 @@ public class PoliController {
     public void viewPoliDoctor(int id){
         modelPoli.viewPoliDokter(id);
     }
+
+    public void viewAllPoli(){
+        modelPoli.viewAllPoli();
+    }
 }

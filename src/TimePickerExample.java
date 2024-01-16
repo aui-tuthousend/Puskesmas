@@ -8,7 +8,8 @@ public class TimePickerExample extends JFrame {
 
     public TimePickerExample() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 200);
+        setSize(900, 600);
+//        setSize(300, 200);
         setLocationRelativeTo(null);
 
         timeSpinner = new JSpinner(new SpinnerDateModel());
