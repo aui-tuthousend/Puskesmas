@@ -8,7 +8,7 @@ import node.Pasien;
 import java.util.ArrayList;
 
 public class ModelPasien {
-    private ArrayList<Pasien> pasiens;
+    public ArrayList<Pasien> pasiens;
     ModelGSON modelGSON;
 
     public ModelPasien(){

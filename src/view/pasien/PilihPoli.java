@@ -1,15 +1,19 @@
 package view.pasien;
 
-import view.pasien.LoginPasien;
+import node.Pasien;
 
 import javax.swing.*;
 
 public class PilihPoli extends JFrame {
-    public PilihPoli(){
+    Pasien pasien;
+    public PilihPoli(Pasien pasien){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);
         setLayout(null);
+
+        this.pasien = pasien;
+
         setResizable(false);
         component();
     }

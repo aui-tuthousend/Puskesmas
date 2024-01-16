@@ -1,19 +1,27 @@
 package view.pasien;
 
+import controller.PasienController;
+import model.ModelPasien;
+import node.Pasien;
 import view.HomePage;
 
 import javax.swing.*;
 
 public class LoginPasien extends JFrame {
     JTextField uname;
-    JLabel label;
-
     JButton login;
+    JLabel warn;
+    ModelPasien modelPasien;
+    PasienController pasienController;
     public LoginPasien(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);
         setLayout(null);
+
+        modelPasien= new ModelPasien();
+        pasienController = new PasienController();
+
         setResizable(false);
         component();
     }
@@ -34,14 +42,15 @@ public class LoginPasien extends JFrame {
         login = new JButton("Lanjut");
         login.setBounds(350, 260, 200, 30);
 
-        label = new JLabel();
-        label.setBounds(350, 380, 200, 30);
-        add(label);
+
+        warn = new JLabel();
+        warn.setBounds(350, 290, 200, 30);
 
 
         back.addActionListener(e -> event());
         login.addActionListener(e -> lojinBang());
 
+        add(warn);
         add(back);
         add(judul);
         add(username);
@@ -50,9 +59,18 @@ public class LoginPasien extends JFrame {
     }
 
     public void lojinBang(){
-        PilihPoli pilihPoli = new PilihPoli();
-        this.setVisible(false);
-        pilihPoli.setVisible(true);
+        for (Pasien pasien: modelPasien.pasiens){
+            if (uname.getText().equals(pasien.NIK) || uname.getText().equals(pasien.BPJS)){
+                Pasien pasienLogin = pasienController.searchPasien(pasien.idPasien);
+
+                PilihPoli pilihPoli = new PilihPoli(pasienLogin);
+                this.setVisible(false);
+                pilihPoli.setVisible(true);
+            } else {
+                warn.setText("NIK/BPJS belum terdaftar :)");
+                warn.setVisible(true);
+            }
+        }
     }
 
     public void event(){
