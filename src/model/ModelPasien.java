@@ -19,7 +19,7 @@ public class ModelPasien {
             this.pasiens = new ArrayList<>();
         }
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("\nShutting down. Saving data to JSON file...");
+//            System.out.println("\nShutting down. Saving data to JSON file...");
             modelGSON.writeToFile(pasiens);
         }));
     }

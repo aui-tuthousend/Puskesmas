@@ -10,7 +10,6 @@ public class RegisPasien extends JFrame {
 
     ArrayList<JTextField> txtField;
     PasienController pasienController;
-    HomePage homePage;
     public RegisPasien(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
@@ -19,7 +18,6 @@ public class RegisPasien extends JFrame {
 
         txtField = new ArrayList<>();
         pasienController = new PasienController();
-        homePage = new HomePage();
 
         components();
         setVisible(true);
@@ -55,20 +53,20 @@ public class RegisPasien extends JFrame {
     }
 
     public void event(){
+        HomePage homePage = new HomePage();
         this.setVisible(false);
         homePage.setVisible(true);
     }
 
     public void daftar(){
-        boolean cek = pasienController.isNIKAda(txtField.get(4).getText());
+        boolean cek = pasienController.isNIKAda(txtField.get(4).getText(), txtField.get(5).getText());
         if (cek){
             pasienController.addPasien(txtField.get(0).getText(), txtField.get(1).getText(),txtField.get(2).getText(),txtField.get(3).getText(),txtField.get(4).getText(),txtField.get(5).getText());
             JOptionPane.showMessageDialog(this, "Pasien berhasil ditambahkan!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
 
-            this.setVisible(false);
-            homePage.setVisible(true);
+            event();
         } else {
-            JOptionPane.showMessageDialog(this, "NIK sudah terdaftar!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "NIK/BPJS sudah terdaftar!", "Peringatan", JOptionPane.WARNING_MESSAGE);
         }
     }
 

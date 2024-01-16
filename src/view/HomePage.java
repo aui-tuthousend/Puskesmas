@@ -7,6 +7,8 @@ import view.pasien.RegisPasien;
 import javax.swing.*;
 
 public class HomePage extends JFrame {
+    LoginPasien loginPasien;
+    RegisPasien regisPasien;
 
     public HomePage(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,13 +44,13 @@ public class HomePage extends JFrame {
     }
 
     public void daftarPasienView(){
-        RegisPasien regisPasien = new RegisPasien();
+        regisPasien = new RegisPasien();
         this.setVisible(false);
         regisPasien.setVisible(true);
     }
 
     public void ambilAntreanView(){
-        LoginPasien loginPasien = new LoginPasien();
+        loginPasien = new LoginPasien();
         this.setVisible(false);
         loginPasien.setVisible(true);
     }

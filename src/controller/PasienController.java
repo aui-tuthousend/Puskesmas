@@ -21,9 +21,12 @@ public class PasienController {
         return pasien;
     }
 
-    public boolean isNIKAda(String NIK){
+    public boolean isNIKAda(String NIK, String bpjs){
         for (Pasien pasien: modelPasien.pasiens){
             if (pasien.NIK.equals(NIK)){
+                return false;
+            }
+            if (pasien.BPJS.equals(bpjs)){
                 return false;
             }
         }
