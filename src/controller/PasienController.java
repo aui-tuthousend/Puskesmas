@@ -4,7 +4,7 @@ import model.ModelPasien;
 import node.Pasien;
 
 public class PasienController {
-    ModelPasien modelPasien;
+    public ModelPasien modelPasien;
 
     public PasienController() {
         this.modelPasien = new ModelPasien();

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Poli {
     public int idPoli;
     public String namaPoli;
-    public ArrayList<Dokter> dokters = null;
-    public ArrayList<Queue> queues = null;
+    public ArrayList<Dokter> dokters;
+    public ArrayList<Queue> queues;
 
     public Poli(int idPoli, String namaPoli) {
         this.idPoli = idPoli;

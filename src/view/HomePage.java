@@ -63,7 +63,7 @@ public class HomePage extends JFrame {
     }
 
     public static void main(String[] args) {
-        HomePage homePage = new HomePage();
+        SwingUtilities.invokeLater(HomePage::new);
     }
 
 }

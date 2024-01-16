@@ -72,7 +72,5 @@ public class RegisPasien extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(RegisPasien::new);
-    }
+
 }

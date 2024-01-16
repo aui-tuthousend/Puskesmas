@@ -9,7 +9,7 @@ import node.Queue;
 import java.util.ArrayList;
 
 public class ModelPoli {
-    private ArrayList<Poli> polis;
+    public ArrayList<Poli> polis;
     ModelGSON modelGSON;
 
     public ModelPoli(){
@@ -20,7 +20,7 @@ public class ModelPoli {
             this.polis = new ArrayList<>();
         }
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("\nShutting down. Saving data to JSON file...");
+//            System.out.println("\nShutting down. Saving data to JSON file...");
             modelGSON.writeToFile(polis);
         }));
     }
@@ -52,16 +52,19 @@ public class ModelPoli {
     }
     public void addPoliQueue(int id, Queue queue){
         Poli poli = searchPoli(id);
-        poli.addQueue(queue);
+        polis.get(poli.idPoli).addQueue(queue);
+//        poli.addQueue(queue);
     }
 
     public int getLastQueueIndex(int id){
         Poli poli = searchPoli(id);
+        int idx;
         if (poli.queues.isEmpty()){
-            return 0;
+            return -1;
+        } else {
+            idx = poli.queues.size()-1;
+            return poli.queues.get(idx).index;
         }
-
-        return poli.queues.size();
     }
     public void viewPoliDokter(int id){
         Poli poli = searchPoli(id);

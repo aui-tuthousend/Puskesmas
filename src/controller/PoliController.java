@@ -8,7 +8,7 @@ import node.Poli;
 import node.Queue;
 
 public class PoliController {
-    ModelPoli modelPoli;
+    public ModelPoli modelPoli;
     ModelQueue modelQueue;
 
     public PoliController() {
@@ -19,18 +19,20 @@ public class PoliController {
     public void addPoli(String nama){
         int id = modelPoli.getLastCode()+1;
         Poli poli = new Poli(id, nama);
+        modelPoli.addPolisModel(poli);
     }
 
     public Poli searchPoli(int id){
-        Poli poli = modelPoli.searchPoli(id);
-        return poli;
+        return modelPoli.searchPoli(id);
     }
 
-    public void addQueue(int idPoli, Pasien pasien, String poli){
-        int id = modelPoli.getLastQueueIndex(idPoli);
+    public int addQueue(int idPoli, Pasien pasien, String poli){
+        int id = modelPoli.getLastQueueIndex(idPoli)+1;
         Queue queue = new Queue(id, pasien, poli);
         modelPoli.addPoliQueue(idPoli, queue);
-        modelQueue.addQueue(queue);
+//        modelQueue.addQueue(queue);
+
+        return id;
     }
 
     public void addDoctor(int idPoli, Dokter dokter){
@@ -44,4 +46,5 @@ public class PoliController {
     public void viewAllPoli(){
         modelPoli.viewAllPoli();
     }
+
 }
