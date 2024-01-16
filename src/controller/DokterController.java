@@ -17,7 +17,7 @@ public class DokterController {
     }
 
     public void addDokter(String nama, String poli){
-        int id = modelDokter.getLastCode();
+        int id = modelDokter.getLastCode()+1;
         Dokter dokter = new Dokter(id, nama, poli);
         modelDokter.addDokterModel(dokter);
     }

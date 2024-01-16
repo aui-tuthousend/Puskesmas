@@ -17,7 +17,7 @@ public class PoliController {
     }
 
     public void addPoli(String nama){
-        int id = modelPoli.getLastCode();
+        int id = modelPoli.getLastCode()+1;
         Poli poli = new Poli(id, nama);
     }
 
