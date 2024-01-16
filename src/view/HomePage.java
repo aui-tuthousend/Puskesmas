@@ -41,9 +41,6 @@ public class HomePage extends JFrame {
         add(judul);
     }
 
-    public void actionHandler(){
-
-    }
     public void daftarPasienView(){
         RegisPasien regisPasien = new RegisPasien();
         this.setVisible(false);

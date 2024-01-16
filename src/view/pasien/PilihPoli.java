@@ -40,8 +40,6 @@ public class PilihPoli extends JFrame {
         back.setBounds(30, 30, 90, 30);
         int y = 150;
         for (Poli poli: poliController.modelPoli.polis){
-//            System.out.println(poli.idPoli);
-//            System.out.println(poli.namaPoli);
             JButton button = new JButton(poli.namaPoli);
             button.setBounds(165, y, 200, 50);
 
@@ -59,10 +57,9 @@ public class PilihPoli extends JFrame {
 
     public void actionHandler(){
         for (Integer id: idPolis){
-            System.out.println(id);
            buttons.get(id).addActionListener(e -> {
                Pasien pasien = pasienController.searchPasien(idPasien);
-               int q = poliController.addQueue(id, pasien, buttons.get(id).getText());
+               int q = poliController.addQueue(id, pasien, buttons.get(id).getText())+1;
                JOptionPane.showMessageDialog(this, "Sukses Mendaftar! \nNo antrean anda: "+q, "Sukses", JOptionPane.INFORMATION_MESSAGE);
 
                HomePage homePage = new HomePage();

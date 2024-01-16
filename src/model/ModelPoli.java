@@ -54,10 +54,11 @@ public class ModelPoli {
         Poli poli = searchPoli(id);
         polis.get(poli.idPoli).addQueue(queue);
 //        poli.addQueue(queue);
+        modelGSON.writeToFile(polis);
     }
 
     public int getLastQueueIndex(int id){
-        Poli poli = searchPoli(id);
+        Poli poli = polis.get(id);
         int idx;
         if (poli.queues.isEmpty()){
             return -1;

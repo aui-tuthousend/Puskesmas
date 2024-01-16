@@ -1,6 +1,7 @@
 package view.pasien;
 
 import controller.PasienController;
+import model.ModelPasien;
 import node.Pasien;
 import view.HomePage;
 
@@ -59,7 +60,7 @@ public class LoginPasien extends JFrame {
     public void lojinBang() {
         boolean found = false;
 
-        for (Pasien pasien : pasienController.modelPasien.pasiens) {
+        for (Pasien pasien : ModelPasien.pasiens) {
             if (uname.getText().equals(pasien.NIK) || uname.getText().equals(pasien.BPJS)) {
                 found = true;
                 pilihPoli = new PilihPoli(pasien.idPasien);
