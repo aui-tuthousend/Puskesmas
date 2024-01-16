@@ -11,7 +11,7 @@ public class PasienController {
     }
 
     public void addPasien(String namaPasien, String alamat, String gender, String TTL, String NIK, String BPJS){
-        int id = modelPasien.getLastCode();
+        int id = modelPasien.getLastCode()+1;
         Pasien pasien = new Pasien(id, namaPasien, alamat, gender, TTL, NIK, BPJS);
         modelPasien.addPasienModel(pasien);
     }
