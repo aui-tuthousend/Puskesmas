@@ -60,14 +60,19 @@ public class RegisPasien extends JFrame {
     }
 
     public void daftar(){
-        pasienController.addPasien(txtField.get(0).getText(), txtField.get(1).getText(),txtField.get(2).getText(),txtField.get(3).getText(),txtField.get(4).getText(),txtField.get(5).getText());
-        JOptionPane.showMessageDialog(this, "Pasien berhasil ditambahkan!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+        boolean cek = pasienController.isNIKAda(txtField.get(4).getText());
+        if (cek){
+            pasienController.addPasien(txtField.get(0).getText(), txtField.get(1).getText(),txtField.get(2).getText(),txtField.get(3).getText(),txtField.get(4).getText(),txtField.get(5).getText());
+            JOptionPane.showMessageDialog(this, "Pasien berhasil ditambahkan!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
 
-        this.setVisible(false);
-        homePage.setVisible(true);
+            this.setVisible(false);
+            homePage.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "NIK sudah terdaftar!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new RegisPasien());
+        SwingUtilities.invokeLater(RegisPasien::new);
     }
 }

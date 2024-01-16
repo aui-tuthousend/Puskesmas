@@ -20,4 +20,13 @@ public class PasienController {
         Pasien pasien = modelPasien.searchPasien(id);
         return pasien;
     }
+
+    public boolean isNIKAda(String NIK){
+        for (Pasien pasien: modelPasien.pasiens){
+            if (pasien.NIK.equals(NIK)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
