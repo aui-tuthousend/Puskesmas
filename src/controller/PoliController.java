@@ -36,7 +36,9 @@ public class PoliController {
 
     public int addQueue(int idPoli, Pasien pasien, String poli){
         int id = modelPoli.getLastQueueIndex(idPoli)+1;
-        node.Queue queue = new node.Queue(id, pasien, poli);
+        String k = String.valueOf(poli.charAt(0));
+        String kodeP = k+id;
+        node.Queue queue = new node.Queue(id, kodeP, pasien, poli);
         modelPoli.addPoliQueue(idPoli, queue);
         modelQueue.addQueue(queue);
 

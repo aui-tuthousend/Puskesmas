@@ -65,7 +65,10 @@ public class ListViewExample extends JFrame {
 
     private void removeItem() {
         int selectedIndex = listView.getSelectedIndex();
+        System.out.println(selectedIndex);
         if (selectedIndex != -1) {
+            String selectedValue = listModel.getElementAt(selectedIndex);
+            System.out.println("Removing item: " + selectedValue);
             listModel.remove(selectedIndex);
         } else {
             JOptionPane.showMessageDialog(this, "Select an item to remove.", "Error", JOptionPane.ERROR_MESSAGE);

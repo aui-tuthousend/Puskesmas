@@ -63,7 +63,7 @@ public class PilihPoli extends JFrame {
                JOptionPane.showMessageDialog(this, "Sukses Mendaftar! \nNo antrean anda: "+q, "Sukses", JOptionPane.INFORMATION_MESSAGE);
 
                HomePage homePage = new HomePage();
-               this.setVisible(false);
+               dispose();
                homePage.setVisible(true);
            });
         }

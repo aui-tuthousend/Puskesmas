@@ -30,9 +30,4 @@ public class ModelQueue {
         this.queues.add(queue);
     }
 
-    public void showAllQueues(){
-        for (node.Queue queue: queues){
-            queue.viewQueue();
-        }
-    }
 }

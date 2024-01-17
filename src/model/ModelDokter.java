@@ -8,7 +8,7 @@ import node.Schedule;
 import java.util.ArrayList;
 
 public class ModelDokter {
-    private ArrayList<Dokter> dokters;
+    public ArrayList<Dokter> dokters;
     ModelGSON modelGSON;
 
     public ModelDokter(){
@@ -28,6 +28,7 @@ public class ModelDokter {
 
     public void addDokterModel(Dokter dokter){
         dokters.add(dokter);
+        modelGSON.writeToFile(dokters);
     }
     public Dokter searchDokter(int id){
         for (Dokter dokter: dokters){
@@ -51,6 +52,7 @@ public class ModelDokter {
     public void addScheduleDoctor(int id, Schedule schedule){
         Dokter dokter = searchDokter(id);
         dokter.addSchedule(schedule);
+        modelGSON.writeToFile(dokters);
     }
 
     public void viewAllDoctor(){

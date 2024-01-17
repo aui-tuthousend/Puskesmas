@@ -63,7 +63,7 @@ public class ListPoli extends JFrame {
 
     public void tambahPoli() {
         JTextField namaPoli = new JTextField();
-        Object[] message = {"Masukkan Nama Poli:", namaPoli};
+        Object[] message = {"Masukkan Nama Poli (usahakan awali dengan huruf kapital)", namaPoli};
 
         int result = JOptionPane.showOptionDialog(
                 null,
@@ -149,8 +149,8 @@ public class ListPoli extends JFrame {
         ListPoli lispoli = new ListPoli();
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(ListPoli::new);
-    }
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(ListPoli::new);
+//    }
 
 }

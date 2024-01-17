@@ -1,0 +1,20 @@
+[
+  {
+    "idPasien": 0,
+    "namaPasien": "el primo",
+    "alamat": "land of dawn",
+    "gender": "L",
+    "TTL": "Sidoarjo, 5 juni 2003",
+    "NIK": "3527",
+    "BPJS": "8230"
+  },
+  {
+    "idPasien": 1,
+    "namaPasien": "liberty",
+    "alamat": "NY",
+    "gender": "P",
+    "TTL": "masangan kulon",
+    "NIK": "1234",
+    "BPJS": "5678"
+  }
+]

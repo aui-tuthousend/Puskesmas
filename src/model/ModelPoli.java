@@ -50,6 +50,7 @@ public class ModelPoli {
     public void addPoliDoctor(int id, Dokter dokter){
         Poli poli = searchPoli(id);
         poli.addDokter(dokter);
+        modelGSON.writeToFile(polis);
     }
     public void addPoliQueue(int id, Queue queue){
         Poli poli = searchPoli(id);

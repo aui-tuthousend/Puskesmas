@@ -8,7 +8,7 @@ import node.Schedule;
 import java.util.ArrayList;
 
 public class DokterController {
-    ModelDokter modelDokter;
+    public ModelDokter modelDokter;
     ModelSchedule modelSchedule;
 
     public DokterController() {
