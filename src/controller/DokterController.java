@@ -16,10 +16,18 @@ public class DokterController {
         this.modelSchedule = new ModelSchedule();
     }
 
-    public void addDokter(String nama, String poli){
+    public void addDokter(String nama, int poli){
         int id = modelDokter.getLastCode()+1;
         Dokter dokter = new Dokter(id, nama, poli);
         modelDokter.addDokterModel(dokter);
+    }
+
+    public void editDokter(int id, String nama, int poli){
+        modelDokter.editDokter(id, nama, poli);
+    }
+
+    public Dokter searchDokter(int id){
+        return modelDokter.searchDokter(id);
     }
 
     public void viewAllDoctor(){

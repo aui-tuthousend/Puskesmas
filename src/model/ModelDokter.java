@@ -30,6 +30,14 @@ public class ModelDokter {
         dokters.add(dokter);
         modelGSON.writeToFile(dokters);
     }
+
+    public void editDokter(int id, String nama, int idP){
+        Dokter dokter = searchDokter(id);
+        dokter.namaDokter = nama;
+        dokter.poli = idP;
+        modelGSON.writeToFile(dokters);
+
+    }
     public Dokter searchDokter(int id){
         for (Dokter dokter: dokters){
             if (dokter.idDokter == id){

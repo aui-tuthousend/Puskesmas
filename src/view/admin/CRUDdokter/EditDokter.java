@@ -3,19 +3,22 @@ package view.admin.CRUDdokter;
 import controller.DokterController;
 import controller.PoliController;
 import model.ModelPoli;
+import node.Dokter;
 import node.Poli;
 import view.admin.ListDokter;
 
 import javax.swing.*;
 
-public class TambahDokter extends JFrame {
+public class EditDokter extends JFrame {
     private DefaultListModel<String> listModel;
     private JList<String> listView;
     private JTextField textField;
     PoliController poliController;
     DokterController dokterController;
+    int idPoli;
+    int idDokter;
 
-    public TambahDokter(){
+    public EditDokter(int idDok, int idPol){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 400);
         setTitle("Tambah Dokter");
@@ -24,6 +27,8 @@ public class TambahDokter extends JFrame {
         listView = new JList<>(listModel);
         textField = new JTextField();
         poliController = new PoliController();
+        idDokter = idDok;
+        idPoli= idPol;
 
         setLayout(null);
         setResizable(false);
@@ -36,6 +41,8 @@ public class TambahDokter extends JFrame {
         JLabel label = new JLabel("Nama Dokter");
         label.setBounds(20, 10, 100, 20);
 
+        Dokter dokter = dokterController.searchDokter(idDokter);
+        textField.setText(dokter.namaDokter);
         textField.setBounds(20,30, 150, 20);
 
         JLabel pilih = new JLabel("Pilih Poli");
@@ -45,6 +52,7 @@ public class TambahDokter extends JFrame {
         for (Poli poli: poliController.modelPoli.polis){
             listModel.addElement(poli.namaPoli);
         }
+        listView.setSelectedIndex(idPoli);
 
         JButton submit = new JButton("Submit");
         submit.setBounds(20, 200, 80, 20);
@@ -52,7 +60,7 @@ public class TambahDokter extends JFrame {
         JButton cancel = new JButton("Cancel");
         cancel.setBounds(105, 200, 80, 20);
 
-        submit.addActionListener(e -> tambahDokter());
+        submit.addActionListener(e -> edit());
         cancel.addActionListener(e -> back());
 
         add(label);
@@ -63,15 +71,15 @@ public class TambahDokter extends JFrame {
         add(cancel);
     }
 
-    public void tambahDokter(){
+    public void edit(){
         int idx = listView.getSelectedIndex();
         if (!textField.getText().isEmpty()){
             if (idx != -1) {
-                dokterController.addDokter(textField.getText(), idx);
+                dokterController.editDokter(idDokter, textField.getText(), idx);
                 int id = dokterController.modelDokter.getLastCode();
                 System.out.println(id);
                 poliController.addDoctor(idx, dokterController.modelDokter.dokters.get(id));
-                JOptionPane.showMessageDialog(this, "Dokter Berhasil Ditambah!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Dokter Berhasil Diedit!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 back();
             } else {
                 JOptionPane.showMessageDialog(this, "Pilih Poli nya banh", "Error", JOptionPane.ERROR_MESSAGE);
@@ -87,7 +95,7 @@ public class TambahDokter extends JFrame {
         listDokter.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(TambahDokter::new);
-    }
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(TambahDokter::new);
+//    }
 }
