@@ -1,5 +1,6 @@
 package controller;
 
+import model.ModelDokter;
 import model.ModelPoli;
 import model.ModelQueue;
 import node.Dokter;
@@ -9,11 +10,13 @@ import node.Queue;
 
 public class PoliController {
     public ModelPoli modelPoli;
+    ModelDokter modelDokter;
     ModelQueue modelQueue;
 
     public PoliController() {
         this.modelPoli = new ModelPoli();
         this.modelQueue = new ModelQueue();
+        this.modelDokter = new ModelDokter();
     }
 
     public void addPoli(String nama){
@@ -25,7 +28,10 @@ public class PoliController {
     public void editPoli(int id, String nama){
         modelPoli.editPoli(id, nama);
     }
-
+//    public void removeDoctor(int idD, int idP){
+//        Dokter dokter = modelDokter.searchDokter(idD);
+//        modelPoli.removePoliDoctor(idP, dokter);
+//    }
     public void deletePoli(int id){
         modelPoli.deletePoli(id);
     }

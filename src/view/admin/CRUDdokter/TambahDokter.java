@@ -69,7 +69,7 @@ public class TambahDokter extends JFrame {
             if (idx != -1) {
                 dokterController.addDokter(textField.getText(), idx);
                 int id = dokterController.modelDokter.getLastCode();
-                System.out.println(id);
+//                System.out.println(id);
                 poliController.addDoctor(idx, dokterController.modelDokter.dokters.get(id));
                 JOptionPane.showMessageDialog(this, "Dokter Berhasil Ditambah!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 back();

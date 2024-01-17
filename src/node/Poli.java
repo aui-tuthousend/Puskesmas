@@ -19,6 +19,10 @@ public class Poli {
         this.dokters.add(dokter);
     }
 
+//    public void removeDokter(Dokter dokter){
+//        dokters.remove(dokter);
+//    }
+
     public void addQueue(Queue queue){
         this.queues.add(queue);
     }

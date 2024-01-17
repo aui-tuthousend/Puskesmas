@@ -52,6 +52,12 @@ public class ModelPoli {
         poli.addDokter(dokter);
         modelGSON.writeToFile(polis);
     }
+
+//    public void removePoliDoctor(int idPoli, Dokter dokter){
+//        Poli poli = searchPoli(idPoli);
+//        poli.removeDokter(dokter);
+//        modelGSON.writeToFile(polis);
+//    }
     public void addPoliQueue(int id, Queue queue){
         Poli poli = searchPoli(id);
         polis.get(poli.idPoli).addQueue(queue);

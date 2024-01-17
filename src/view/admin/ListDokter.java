@@ -42,7 +42,7 @@ public class ListDokter extends JFrame {
             poli.setBounds(265, y, 100, 20);
 
             JButton edit = new JButton("edit");
-            edit.setBounds(365, y, 80, 20);
+            edit.setBounds(310, y, 80, 20);
 
             edit.addActionListener(e -> editDokter(dokter.idDokter, dokter.poli));
 
@@ -80,7 +80,7 @@ public class ListDokter extends JFrame {
         editDokter.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(ListDokter::new);
-    }
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(ListDokter::new);
+//    }
 }

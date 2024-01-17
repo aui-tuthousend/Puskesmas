@@ -73,12 +73,13 @@ public class EditDokter extends JFrame {
 
     public void edit(){
         int idx = listView.getSelectedIndex();
+        System.out.println(idx);
         if (!textField.getText().isEmpty()){
             if (idx != -1) {
                 dokterController.editDokter(idDokter, textField.getText(), idx);
                 int id = dokterController.modelDokter.getLastCode();
-                System.out.println(id);
-                poliController.addDoctor(idx, dokterController.modelDokter.dokters.get(id));
+//                System.out.println(id);
+//                poliController.addDoctor(idx, dokterController.modelDokter.dokters.get(id));
                 JOptionPane.showMessageDialog(this, "Dokter Berhasil Diedit!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 back();
             } else {
@@ -95,7 +96,5 @@ public class EditDokter extends JFrame {
         listDokter.setVisible(true);
     }
 
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(TambahDokter::new);
-//    }
+
 }
