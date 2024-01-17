@@ -2,8 +2,6 @@ package view.admin;
 
 import controller.PoliController;
 import node.Poli;
-import view.HomePage;
-import view.admin.HomeAdmin;
 
 import javax.swing.*;
 
@@ -21,6 +19,7 @@ public class ListPoli extends JFrame {
     }
 
     public void component(){
+        getContentPane().removeAll();
         JButton back = new JButton("Back");
         back.setBounds(30, 30, 90, 30);
 
@@ -40,6 +39,7 @@ public class ListPoli extends JFrame {
 
 
         back.addActionListener(e -> event());
+        addPoli.addActionListener(e -> addPoli());
 
         add(back);
         add(judul);
@@ -52,8 +52,39 @@ public class ListPoli extends JFrame {
         homeAdmin.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(ListPoli::new);
+    public void addPoli() {
+        JTextField namaPoli = new JTextField();
+        Object[] message = {"Masukkan Nama Poli:", namaPoli};
+
+        int result = JOptionPane.showOptionDialog(
+                null,
+                message,
+                "Tambah Poli",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                null,
+                null);
+
+        if (result == JOptionPane.OK_OPTION) {
+            String nPoli = namaPoli.getText().trim();
+
+            if (!nPoli.isEmpty()) {
+                poliController.addPoli(nPoli);
+                JOptionPane.showMessageDialog(null, "Poli "+nPoli+" berhasil ditambahkan!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                component();
+            } else {
+                JOptionPane.showMessageDialog(null, "Nama Poli tidak boleh kosong cuy (emot marah)", "Peringatan", JOptionPane.WARNING_MESSAGE);
+                addPoli();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Tambah Poli dibatalkan.");
+        }
     }
+
+
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(ListPoli::new);
+//    }
 
 }

@@ -27,7 +27,7 @@ public class ModelPasien {
     public void addPasienModel(Pasien pasien){
         this.pasiens.add(pasien);
         modelGSON.writeToFile(pasiens);
-        System.out.println("GG");
+//        System.out.println("GG");
     }
     public Pasien searchPasien(int id){
         for (Pasien pasien: pasiens){

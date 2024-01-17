@@ -27,6 +27,7 @@ public class ModelPoli {
 
     public void addPolisModel(Poli poli){
         this.polis.add(poli);
+        modelGSON.writeToFile(polis);
     }
     public Poli searchPoli(int id){
         for (Poli poli: polis){
