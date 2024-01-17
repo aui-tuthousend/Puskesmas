@@ -29,30 +29,33 @@ public class ListPoli extends JFrame {
         JButton addPoli = new JButton("+");
         addPoli.setBounds(225, 90, 50, 25);
 
-        int y=120;
+        int y=130;
         for (Poli poli: poliController.modelPoli.polis){
             JLabel label = new JLabel(poli.namaPoli);
             label.setBounds(165, y, 100, 20);
-            y+=25;
+
+            JButton edit = new JButton("edit");
+            edit.setBounds(265, y, 70, 20);
+
+            edit.addActionListener(e -> editPoli(poli.idPoli));
+
+            y+=30;
             add(label);
+            add(edit);
         }
 
 
         back.addActionListener(e -> event());
-        addPoli.addActionListener(e -> addPoli());
+        addPoli.addActionListener(e -> tambahPoli());
 
         add(back);
         add(judul);
         add(addPoli);
     }
 
-    public void event(){
-        HomeAdmin homeAdmin = new HomeAdmin();
-        this.setVisible(false);
-        homeAdmin.setVisible(true);
-    }
 
-    public void addPoli() {
+
+    public void tambahPoli() {
         JTextField namaPoli = new JTextField();
         Object[] message = {"Masukkan Nama Poli:", namaPoli};
 
@@ -71,20 +74,58 @@ public class ListPoli extends JFrame {
 
             if (!nPoli.isEmpty()) {
                 poliController.addPoli(nPoli);
+                refresh();
                 JOptionPane.showMessageDialog(null, "Poli "+nPoli+" berhasil ditambahkan!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
-                component();
             } else {
                 JOptionPane.showMessageDialog(null, "Nama Poli tidak boleh kosong cuy (emot marah)", "Peringatan", JOptionPane.WARNING_MESSAGE);
-                addPoli();
+                tambahPoli();
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Tambah Poli dibatalkan.");
         }
     }
 
+    public void editPoli(int id) {
+//        System.out.println(id);
+        Poli poli = poliController.searchPoli(id);
+        JTextField namaPoli = new JTextField(poli.namaPoli);
+        Object[] message = {"Edit Nama Poli:", namaPoli};
 
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(ListPoli::new);
-//    }
+        int result = JOptionPane.showOptionDialog(
+                null,
+                message,
+                "Edit Poli",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                null,
+                null);
+
+        if (result == JOptionPane.OK_OPTION) {
+            String nPoli = namaPoli.getText().trim();
+
+            if (!nPoli.isEmpty()) {
+                poliController.editPoli(poli.idPoli, nPoli);
+                refresh();
+                JOptionPane.showMessageDialog(null, "Poli "+nPoli+" berhasil diedit!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Nama Poli tidak boleh kosong cuy (emot marah)", "Peringatan", JOptionPane.WARNING_MESSAGE);
+                editPoli(poli.idPoli);
+            }
+        }
+    }
+
+    public void event(){
+        HomeAdmin homeAdmin = new HomeAdmin();
+        this.setVisible(false);
+        homeAdmin.setVisible(true);
+    }
+
+    public void refresh(){
+        this.dispose();
+        ListPoli lispoli = new ListPoli();
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(ListPoli::new);
+    }
 
 }

@@ -29,4 +29,8 @@ public class Poli {
             dokter.viewDokter();
         }
     }
+
+    public void setNamaPoli(String namaPoli) {
+        this.namaPoli = namaPoli;
+    }
 }

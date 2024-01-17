@@ -58,6 +58,12 @@ public class ModelPoli {
         modelGSON.writeToFile(polis);
     }
 
+    public void editPoli(int id, String nama){
+        Poli poli = searchPoli(id);
+        poli.setNamaPoli(nama);
+        modelGSON.writeToFile(polis);
+    }
+
     public int getLastQueueIndex(int id){
         Poli poli = polis.get(id);
         int idx;

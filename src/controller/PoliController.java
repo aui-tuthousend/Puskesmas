@@ -22,6 +22,10 @@ public class PoliController {
         modelPoli.addPolisModel(poli);
     }
 
+    public void editPoli(int id, String nama){
+        modelPoli.editPoli(id, nama);
+    }
+
     public Poli searchPoli(int id){
         return modelPoli.searchPoli(id);
     }
@@ -34,6 +38,7 @@ public class PoliController {
 
         return id;
     }
+
 
     public void addDoctor(int idPoli, Dokter dokter){
         modelPoli.addPoliDoctor(idPoli, dokter);
