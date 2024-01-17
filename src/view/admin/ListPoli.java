@@ -39,9 +39,15 @@ public class ListPoli extends JFrame {
 
             edit.addActionListener(e -> editPoli(poli.idPoli));
 
+            JButton delete = new JButton("delete");
+            delete.setBounds(355, y, 70, 20);
+
+            delete.addActionListener(e -> deletePoli(poli.idPoli));
+
             y+=30;
             add(label);
             add(edit);
+            add(delete);
         }
 
 
@@ -110,6 +116,25 @@ public class ListPoli extends JFrame {
                 JOptionPane.showMessageDialog(null, "Nama Poli tidak boleh kosong cuy (emot marah)", "Peringatan", JOptionPane.WARNING_MESSAGE);
                 editPoli(poli.idPoli);
             }
+        }
+    }
+
+    public void deletePoli(int id){
+        Poli poli = poliController.searchPoli(id);
+        if (poli.queues.isEmpty() && poli.dokters.isEmpty()){
+            int result = JOptionPane.showConfirmDialog(
+                    null,
+                    "Apakah Anda yakin ingin menghapus?",
+                    "Konfirmasi",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (result == JOptionPane.YES_OPTION) {
+                poliController.deletePoli(id);
+                refresh();
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Poli masih memiliki antrian / dokter", "Peringatan", JOptionPane.WARNING_MESSAGE);
         }
     }
 

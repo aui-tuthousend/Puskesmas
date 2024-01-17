@@ -26,6 +26,10 @@ public class PoliController {
         modelPoli.editPoli(id, nama);
     }
 
+    public void deletePoli(int id){
+        modelPoli.deletePoli(id);
+    }
+
     public Poli searchPoli(int id){
         return modelPoli.searchPoli(id);
     }

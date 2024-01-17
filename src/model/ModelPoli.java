@@ -63,7 +63,10 @@ public class ModelPoli {
         poli.setNamaPoli(nama);
         modelGSON.writeToFile(polis);
     }
-
+    public void deletePoli(int id){
+        polis.remove(id);
+        modelGSON.writeToFile(polis);
+    }
     public int getLastQueueIndex(int id){
         Poli poli = polis.get(id);
         int idx;
