@@ -1,18 +1,20 @@
 package view.admin;
 
 import controller.DokterController;
+import node.Dokter;
+import view.admin.CRUDdokter.TambahDokter;
 
 import javax.swing.*;
 
 public class ListDokter extends JFrame {
-//    DokterController dokterController;
+    DokterController dokterController;
     public ListDokter(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);
         setLayout(null);
+        dokterController = new DokterController();
         setResizable(false);
-//        dokterController = new DokterController();
         component();
     }
 
@@ -27,9 +29,17 @@ public class ListDokter extends JFrame {
         tambahDokter.setBounds(235, 90, 50, 25);
 
         int y=130;
+        for (Dokter dokter: dokterController.modelDokter.dokters){
+            JLabel label = new JLabel(dokter.namaDokter);
+            label.setBounds(165, y, 100, 20);
+
+            add(label);
+            y+=30;
+        }
 
 
         back.addActionListener(e -> event());
+        tambahDokter.addActionListener(e -> tambaDokter());
 
         add(back);
         add(tambahDokter);
@@ -42,7 +52,14 @@ public class ListDokter extends JFrame {
         homeAdmin.setVisible(true);
     }
 
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(ListDokter::new);
-//    }
+    public void tambaDokter(){
+        TambahDokter tambahDokter = new TambahDokter();
+        this.setVisible(false);
+        tambahDokter.setVisible(true);
+
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(ListDokter::new);
+    }
 }

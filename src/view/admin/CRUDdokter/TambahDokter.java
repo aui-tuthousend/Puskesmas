@@ -49,13 +49,18 @@ public class TambahDokter extends JFrame {
         JButton submit = new JButton("Submit");
         submit.setBounds(20, 200, 80, 20);
 
+        JButton cancel = new JButton("Cancel");
+        cancel.setBounds(105, 200, 80, 20);
+
         submit.addActionListener(e -> tambahDokter());
+        cancel.addActionListener(e -> back());
 
         add(label);
         add(pilih);
         add(textField);
         add(listView);
         add(submit);
+        add(cancel);
     }
 
     public void tambahDokter(){
@@ -66,9 +71,17 @@ public class TambahDokter extends JFrame {
             int id = dokterController.modelDokter.getLastCode();
             System.out.println(id);
             poliController.addDoctor(idx, dokterController.modelDokter.dokters.get(id));
+            JOptionPane.showMessageDialog(this, "Dokter Berhasil Ditambah!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            back();
         } else {
             JOptionPane.showMessageDialog(this, "Pilih Poli nya banh", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    public void back(){
+        ListDokter listDokter = new ListDokter();
+        this.dispose();
+        listDokter.setVisible(true);
     }
 
     public static void main(String[] args) {

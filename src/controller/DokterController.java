@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class DokterController {
     public ModelDokter modelDokter;
-    ModelSchedule modelSchedule;
+    public ModelSchedule modelSchedule;
 
     public DokterController() {
         this.modelDokter = new ModelDokter();
