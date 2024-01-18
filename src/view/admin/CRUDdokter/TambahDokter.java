@@ -2,16 +2,15 @@ package view.admin.CRUDdokter;
 
 import controller.DokterController;
 import controller.PoliController;
-import model.ModelPoli;
 import node.Poli;
 import view.admin.ListDokter;
 
 import javax.swing.*;
 
 public class TambahDokter extends JFrame {
-    private DefaultListModel<String> listModel;
-    private JList<String> listView;
-    private JTextField textField;
+    private final DefaultListModel<String> listModel;
+    private final JList<String> listView;
+    private final JTextField textField;
     PoliController poliController;
     DokterController dokterController;
 
@@ -68,9 +67,9 @@ public class TambahDokter extends JFrame {
         if (!textField.getText().isEmpty()){
             if (idx != -1) {
                 dokterController.addDokter(textField.getText(), idx);
-                int id = dokterController.modelDokter.getLastCode();
+//                int id = dokterController.modelDokter.getLastCode();
 //                System.out.println(id);
-                poliController.addDoctor(idx, dokterController.modelDokter.dokters.get(id));
+//                poliController.addDoctor(idx, dokterController.modelDokter.dokters.get(id));
                 JOptionPane.showMessageDialog(this, "Dokter Berhasil Ditambah!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 back();
             } else {

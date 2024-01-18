@@ -44,8 +44,13 @@ public class ListDokter extends JFrame {
             JButton edit = new JButton("edit");
             edit.setBounds(310, y, 80, 20);
 
-            edit.addActionListener(e -> editDokter(dokter.idDokter, dokter.poli));
+            JButton delete = new JButton("hapus");
+            delete.setBounds(400, y, 80, 20);
 
+            edit.addActionListener(e -> editDokter(dokter.idDokter, dokter.poli));
+            delete.addActionListener(e -> deleteDokter(dokter.idDokter));
+
+            add(delete);
             add(edit);
             add(label);
             add(poli);
@@ -80,6 +85,32 @@ public class ListDokter extends JFrame {
         editDokter.setVisible(true);
     }
 
+    public void deleteDokter(int idD){
+        Dokter dokter = dokterController.searchDokter(idD);
+        if (dokter.schedules.isEmpty()){
+            int result = JOptionPane.showConfirmDialog(
+                    null,
+                    "Apakah Anda yakin ingin menghapus?",
+                    "Konfirmasi",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (result == JOptionPane.YES_OPTION) {
+                dokterController.deleteDokter(idD);
+                refresh();
+            }
+        }else {
+            JOptionPane.showMessageDialog(null, "Dokter masih memiliki jadwal praktek!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    public void tambahJadwal(int idD){
+
+    }
+
+    public void refresh(){
+        this.dispose();
+        ListDokter listDokter = new ListDokter();
+    }
 //    public static void main(String[] args) {
 //        SwingUtilities.invokeLater(ListDokter::new);
 //    }

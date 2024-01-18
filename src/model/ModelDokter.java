@@ -38,6 +38,10 @@ public class ModelDokter {
         modelGSON.writeToFile(dokters);
 
     }
+    public void deleteDokter(int id){
+        this.dokters.remove(id);
+        modelGSON.writeToFile(dokters);
+    }
     public Dokter searchDokter(int id){
         for (Dokter dokter: dokters){
             if (dokter.idDokter == id){

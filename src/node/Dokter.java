@@ -12,14 +12,15 @@ public class Dokter {
         this.idDokter = idDokter;
         this.namaDokter = namaDokter;
         this.poli = poli;
+        this.schedules = new ArrayList<>();
     }
 
-    public Dokter(int idDokter, String namaDokter, int poli, ArrayList<Schedule> schedules) {
-        this.idDokter = idDokter;
-        this.namaDokter = namaDokter;
-        this.poli = poli;
-        this.schedules = schedules;
-    }
+//    public Dokter(int idDokter, String namaDokter, int poli, ArrayList<Schedule> schedules) {
+//        this.idDokter = idDokter;
+//        this.namaDokter = namaDokter;
+//        this.poli = poli;
+//        this.schedules = schedules;
+//    }
 
     public void addSchedule(Schedule schedule){
         this.schedules.add(schedule);

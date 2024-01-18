@@ -26,6 +26,10 @@ public class DokterController {
         modelDokter.editDokter(id, nama, poli);
     }
 
+    public void deleteDokter(int id){
+        modelDokter.deleteDokter(id);
+    }
+
     public Dokter searchDokter(int id){
         return modelDokter.searchDokter(id);
     }
