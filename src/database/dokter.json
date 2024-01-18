@@ -28,6 +28,13 @@
     "idDokter": 1,
     "namaDokter": "jimbe",
     "poli": 2,
-    "schedules": []
+    "schedules": [
+      {
+        "idSchedule": 3,
+        "hari": "minggu",
+        "jam": "12:00-13:00",
+        "namaDoketer": "jimbe"
+      }
+    ]
   }
 ]

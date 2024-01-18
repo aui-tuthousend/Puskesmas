@@ -69,8 +69,17 @@ public class ViewDokter extends JFrame {
         int y=265;
         for (Schedule jadwal: dokter.schedules){
             JLabel label = new JLabel(jadwal.hari+" "+jadwal.jam);
-            label.setBounds(200, y, 300, 20);
-            y+=20;
+            label.setBounds(200, y, 200, 20);
+
+            JButton edit = new JButton("edit");
+            edit.setBounds(350, y, 70, 20);
+
+            JButton delete = new JButton("delete");
+            delete.setBounds(430, y, 70, 20);
+            y+=30;
+
+            add(delete);
+            add(edit);
             add(label);
         }
     }
