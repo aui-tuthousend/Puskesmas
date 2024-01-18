@@ -1,7 +1,33 @@
 [
   {
     "idDokter": 0,
-    "namaDokter": "hadi",
-    "poli": 1
+    "namaDokter": "leana",
+    "poli": 0,
+    "schedules": [
+      {
+        "idSchedule": 0,
+        "hari": "senin",
+        "jam": "15:00-16:00",
+        "namaDoketer": "leana"
+      },
+      {
+        "idSchedule": 1,
+        "hari": "selasa",
+        "jam": "08:00-10:00",
+        "namaDoketer": "leana"
+      },
+      {
+        "idSchedule": 2,
+        "hari": "jumat",
+        "jam": "03:00-04:30",
+        "namaDoketer": "leana"
+      }
+    ]
+  },
+  {
+    "idDokter": 1,
+    "namaDokter": "jimbe",
+    "poli": 2,
+    "schedules": []
   }
 ]

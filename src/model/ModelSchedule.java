@@ -20,14 +20,15 @@ public class ModelSchedule {
             this.schedules = new ArrayList<>();
         }
 
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            System.out.println("\nShutting down. Saving data to JSON file...");
-            modelGSON.writeToFile(schedules);
-        }));
+//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+////            System.out.println("\nShutting down. Saving data to JSON file...");
+//            modelGSON.writeToFile(schedules);
+//        }));
     }
 
     public void addSchedule(Schedule schedule){
         this.schedules.add(schedule);
+        modelGSON.writeToFile(schedules);
     }
 
     public ArrayList<Schedule> getDaySchedules(String day){

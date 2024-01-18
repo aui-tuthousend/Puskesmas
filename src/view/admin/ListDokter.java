@@ -6,6 +6,7 @@ import node.Dokter;
 import node.Poli;
 import view.admin.CRUDdokter.EditDokter;
 import view.admin.CRUDdokter.TambahDokter;
+import view.admin.CRUDdokter.ViewDokter;
 
 import javax.swing.*;
 
@@ -41,22 +42,26 @@ public class ListDokter extends JFrame {
             JLabel poli = new JLabel(pyoli.namaPoli);
             poli.setBounds(265, y, 100, 20);
 
+            JButton viewDokter = new JButton("view");
+            viewDokter.setBounds(350, y, 80, 20);
+
             JButton edit = new JButton("edit");
-            edit.setBounds(310, y, 80, 20);
+            edit.setBounds(440, y, 80, 20);
 
             JButton delete = new JButton("hapus");
-            delete.setBounds(400, y, 80, 20);
+            delete.setBounds(530, y, 80, 20);
 
+            viewDokter.addActionListener(e -> viuDokter(dokter.idDokter, pyoli.namaPoli));
             edit.addActionListener(e -> editDokter(dokter.idDokter, dokter.poli));
             delete.addActionListener(e -> deleteDokter(dokter.idDokter));
 
+            add(viewDokter);
             add(delete);
             add(edit);
             add(label);
             add(poli);
             y+=30;
         }
-
 
         back.addActionListener(e -> event());
         tambahDokter.addActionListener(e -> tambaDokter());
@@ -76,7 +81,6 @@ public class ListDokter extends JFrame {
         TambahDokter tambahDokter = new TambahDokter();
         this.setVisible(false);
         tambahDokter.setVisible(true);
-
     }
 
     public void editDokter(int idD, int idP){
@@ -103,8 +107,10 @@ public class ListDokter extends JFrame {
         }
     }
 
-    public void tambahJadwal(int idD){
-
+    public void viuDokter(int idD, String nama){
+        ViewDokter viewDokter = new ViewDokter(idD, nama);
+        this.setVisible(false);
+        viewDokter.setVisible(true);
     }
 
     public void refresh(){
