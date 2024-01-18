@@ -7,19 +7,7 @@
       {
         "idSchedule": 0,
         "hari": "senin",
-        "jam": "15:00-16:00",
-        "namaDoketer": "leana"
-      },
-      {
-        "idSchedule": 1,
-        "hari": "selasa",
-        "jam": "08:00-10:00",
-        "namaDoketer": "leana"
-      },
-      {
-        "idSchedule": 2,
-        "hari": "jumat",
-        "jam": "03:00-04:30",
+        "jam": "13:00-14:30",
         "namaDoketer": "leana"
       }
     ]
@@ -30,9 +18,9 @@
     "poli": 2,
     "schedules": [
       {
-        "idSchedule": 3,
-        "hari": "minggu",
-        "jam": "12:00-13:00",
+        "idSchedule": 0,
+        "hari": "selasa",
+        "jam": "07:00-15:00",
         "namaDoketer": "jimbe"
       }
     ]

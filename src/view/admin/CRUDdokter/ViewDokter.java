@@ -78,6 +78,8 @@ public class ViewDokter extends JFrame {
             delete.setBounds(430, y, 70, 20);
             y+=30;
 
+            edit.addActionListener(e -> editJadual(jadwal.idSchedule, jadwal.hari, jadwal.jam));
+
             add(delete);
             add(edit);
             add(label);
@@ -103,6 +105,30 @@ public class ViewDokter extends JFrame {
 
             if (!hari.isEmpty() && !jam.isEmpty()) {
                 dokterController.addSchedule(idDokter, hari, jam);
+                refresh();
+            }
+        }
+    }
+
+    public void editJadual(int idJadwal, String hr, String jm){
+        JPanel inputPanel = new JPanel();
+        JTextField textField1 = new JTextField(hr);
+        JTextField textField2 = new JTextField(jm);
+
+        inputPanel.setLayout(new GridLayout(2, 2));
+        inputPanel.add(new JLabel("Hari:"));
+        inputPanel.add(textField1);
+        inputPanel.add(new JLabel("Jam:"));
+        inputPanel.add(textField2);
+
+        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Edit Hari dan Jam", JOptionPane.OK_CANCEL_OPTION);
+
+        if (result == JOptionPane.OK_OPTION) {
+            String hari = textField1.getText().trim();
+            String jam = textField2.getText().trim();
+
+            if (!hari.isEmpty() && !jam.isEmpty()) {
+                dokterController.editSchedule(idDokter, idJadwal, hari, jam);
                 refresh();
             }
         }

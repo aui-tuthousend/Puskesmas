@@ -40,10 +40,15 @@ public class DokterController {
 
     public void addSchedule(int idDokter, String hari, String jam){
         Dokter dokter = modelDokter.searchDokter(idDokter);
-        int id = modelSchedule.getLastCode()+1;
+        int id = modelDokter.getLastScheduleIndex(idDokter)+1;
         Schedule schedule = new Schedule(id, hari, jam, dokter.namaDokter);
         modelDokter.addScheduleDoctor(idDokter, schedule);
         modelSchedule.addSchedule(schedule);
+    }
+
+    public void editSchedule(int idD, int idJ, String har, String jam){
+        modelDokter.editJadwal(idD, idJ, har, jam);
+        modelSchedule.editSchedule(idJ, har, jam);
     }
 
     public ArrayList<Schedule> viewDoctorSchedule(String day){

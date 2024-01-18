@@ -31,6 +31,13 @@ public class ModelSchedule {
         modelGSON.writeToFile(schedules);
     }
 
+    public void editSchedule(int idJ, String hr, String jm){
+        Schedule schedule = searchSchedule(idJ);
+        schedule.hari = hr;
+        schedule.jam = jm;
+        modelGSON.writeToFile(schedules);
+    }
+
     public ArrayList<Schedule> getDaySchedules(String day){
         ArrayList<Schedule> result = new ArrayList<>();
         for (Schedule schedule: schedules){

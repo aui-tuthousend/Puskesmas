@@ -3,6 +3,7 @@ package model;
 import com.google.gson.reflect.TypeToken;
 import modelGSON.ModelGSON;
 import node.Dokter;
+import node.Poli;
 import node.Schedule;
 
 import java.util.ArrayList;
@@ -50,6 +51,23 @@ public class ModelDokter {
         }
 
         return null;
+    }
+
+    public int getLastScheduleIndex(int id){
+        Dokter dokter = searchDokter(id);
+        int idx;
+        if (dokter.schedules.isEmpty()){
+            return -1;
+        } else {
+            idx = dokter.schedules.size()-1;
+            return dokter.schedules.get(idx).idSchedule;
+        }
+    }
+    public void editJadwal(int idD, int idJ, String hr, String jm){
+        Dokter dokter = searchDokter(idD);
+        dokter.schedules.get(idJ).hari = hr;
+        dokter.schedules.get(idJ).jam = jm;
+        modelGSON.writeToFile(dokters);
     }
     public int getLastCode(){
         int idx;
