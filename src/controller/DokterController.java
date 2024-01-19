@@ -51,6 +51,11 @@ public class DokterController {
         modelSchedule.editSchedule(idJ, har, jam);
     }
 
+    public void deleteSchedule(int idD, int idJ, String nmD){
+        modelDokter.deleteJadwal(idD, idJ);
+        modelSchedule.deleteSchedule(idJ, nmD);
+    }
+
     public ArrayList<Schedule> viewDoctorSchedule(String day){
         ArrayList<Schedule> schedules = modelSchedule.getDaySchedules(day);
 

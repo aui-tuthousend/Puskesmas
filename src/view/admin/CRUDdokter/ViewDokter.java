@@ -79,6 +79,7 @@ public class ViewDokter extends JFrame {
             y+=30;
 
             edit.addActionListener(e -> editJadual(jadwal.idSchedule, jadwal.hari, jadwal.jam));
+            delete.addActionListener(e -> deleteJadual(idDokter, jadwal.idSchedule, jadwal.namaDoketer));
 
             add(delete);
             add(edit);
@@ -131,6 +132,19 @@ public class ViewDokter extends JFrame {
                 dokterController.editSchedule(idDokter, idJadwal, hari, jam);
                 refresh();
             }
+        }
+    }
+
+    public void deleteJadual(int idD, int idJ, String nmD){
+        int result = JOptionPane.showConfirmDialog(
+                null,
+                "Apakah Anda yakin ingin menghapus?",
+                "Konfirmasi",
+                JOptionPane.YES_NO_OPTION);
+
+        if (result == JOptionPane.YES_OPTION) {
+            dokterController.deleteSchedule(idD, idJ, nmD);
+            refresh();
         }
     }
 

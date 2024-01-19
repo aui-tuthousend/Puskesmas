@@ -6,8 +6,8 @@
     "schedules": [
       {
         "idSchedule": 0,
-        "hari": "senin",
-        "jam": "13:00-14:30",
+        "hari": "kamis",
+        "jam": "10:00-14:00",
         "namaDoketer": "leana"
       }
     ]

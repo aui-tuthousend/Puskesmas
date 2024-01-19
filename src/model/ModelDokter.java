@@ -69,6 +69,11 @@ public class ModelDokter {
         dokter.schedules.get(idJ).jam = jm;
         modelGSON.writeToFile(dokters);
     }
+    public void deleteJadwal(int idD, int idJ){
+        Dokter dokter = searchDokter(idD);
+        dokter.schedules.remove(idJ);
+        modelGSON.writeToFile(dokters);
+    }
     public int getLastCode(){
         int idx;
         if(dokters.isEmpty()) {

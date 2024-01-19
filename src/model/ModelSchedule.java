@@ -38,6 +38,15 @@ public class ModelSchedule {
         modelGSON.writeToFile(schedules);
     }
 
+    public void deleteSchedule(int id, String nama){
+        for (Schedule schedule: schedules){
+            if (schedule.idSchedule == id && schedule.namaDoketer.equals(nama)){
+                schedules.remove(schedule);
+            }
+        }
+        modelGSON.writeToFile(schedules);
+    }
+
     public ArrayList<Schedule> getDaySchedules(String day){
         ArrayList<Schedule> result = new ArrayList<>();
         for (Schedule schedule: schedules){
