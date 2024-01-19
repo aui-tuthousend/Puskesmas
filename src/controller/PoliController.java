@@ -40,13 +40,13 @@ public class PoliController {
         return modelPoli.searchPoli(id);
     }
 
-    public int addQueue(int idPoli, Pasien pasien, String poli, Admin atmin){
+    public int addQueue(int idPoli, Pasien pasien, String poli){
         int id = modelPoli.getLastQueueIndex(idPoli)+1;
         String k = String.valueOf(poli.charAt(0));
         String kodeP = k+id;
         node.Queue queue = new node.Queue(id, kodeP, pasien, poli);
         Poli poly = modelPoli.searchPoli(idPoli);
-        transactionController.addTransaction(queue, poly, atmin);
+        transactionController.addTransaction(queue, poly);
         modelPoli.addPoliQueue(idPoli, queue);
         modelQueue.addQueue(queue);
 
