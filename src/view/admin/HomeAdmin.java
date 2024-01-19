@@ -30,7 +30,7 @@ public class HomeAdmin extends JFrame {
         label.setBounds(165, 120, 200, 20);
 
 
-        String[] data = {"List Poli", "List Dokter", "Jadwal Praktek Dokter", "Cetak Transaksi"};
+        String[] data = {"List Poli", "List Dokter", "Cetak Transaksi"};
         int y = 150;
         for (String txt: data){
             JButton button = new JButton(txt);
@@ -66,13 +66,6 @@ public class HomeAdmin extends JFrame {
         });
 
         buttons.get(2).addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        buttons.get(3).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 

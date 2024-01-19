@@ -29,16 +29,20 @@ public class HomePage extends JFrame {
         JButton ambilAntrean = new JButton("Ambil Antrean");
         ambilAntrean.setBounds(350, 270, 200, 30);
 
+        JButton jadwalPrak = new JButton("Jadwal Praktek Dokter");
+        jadwalPrak.setBounds(350, 310, 200, 30);
+
         JButton loginAdmin = new JButton("Login admin");
         loginAdmin.setBounds(700, 500, 150, 30);
 
         daftarPasien.addActionListener(e -> daftarPasienView());
         ambilAntrean.addActionListener(e -> ambilAntreanView());
         loginAdmin.addActionListener(e -> loginAdminView());
-
+        jadwalPrak.addActionListener(e -> jadwalPraktek());
 
         add(daftarPasien);
         add(ambilAntrean);
+        add(jadwalPrak);
         add(loginAdmin);
         add(judul);
     }
@@ -59,6 +63,10 @@ public class HomePage extends JFrame {
         LoginAdmin loginView = new LoginAdmin();
         this.setVisible(false);
         loginView.setVisible(true);
+    }
+
+    public void jadwalPraktek(){
+
     }
 
     public static void main(String[] args) {
