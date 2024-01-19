@@ -35,10 +35,5 @@ public class ModelTransaction {
         }
         return null;
     }
-    public void showAllTransaction(){
-        for (Transaction data: transactions){
-            data.viewTransaction();
-        }
-    }
 
 }

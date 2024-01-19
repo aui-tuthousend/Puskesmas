@@ -16,5 +16,14 @@
     "TTL": "masangan kulon",
     "NIK": "1234",
     "BPJS": "5678"
+  },
+  {
+    "idPasien": 2,
+    "namaPasien": "faqih",
+    "alamat": "semolo",
+    "gender": "p",
+    "TTL": "kalimantan",
+    "NIK": "1231",
+    "BPJS": "213"
   }
 ]
