@@ -1,20 +1,29 @@
 package view;
 
+import controller.DokterController;
+import node.Dokter;
+import node.Schedule;
 import view.admin.LoginAdmin;
 import view.pasien.LoginPasien;
 import view.pasien.RegisPasien;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class HomePage extends JFrame {
     LoginPasien loginPasien;
     RegisPasien regisPasien;
+    JPanel inputPanel;
+    DokterController dokterController;
+
 
     public HomePage(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setLayout(null);
         setResizable(false);
+        dokterController = new DokterController();
+
         components();
         setVisible(true);
     }
@@ -66,6 +75,18 @@ public class HomePage extends JFrame {
     }
 
     public void jadwalPraktek(){
+        inputPanel = new JPanel();
+
+        inputPanel.setLayout(new GridLayout( 10,1));
+        for (Dokter dokter: dokterController.modelDokter.dokters){
+            inputPanel.add(new JLabel("Dokter : "+dokter.namaDokter));
+            for (Schedule schedule: dokter.schedules){
+                inputPanel.add(new JLabel(schedule.hari+" "+schedule.jam));
+            }
+            inputPanel.add(new JLabel("\n"));
+
+        }
+        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
 
     }
 

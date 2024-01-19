@@ -9,6 +9,12 @@
         "hari": "kamis",
         "jam": "10:00-14:00",
         "namaDoketer": "leana"
+      },
+      {
+        "idSchedule": 1,
+        "hari": "senin",
+        "jam": "10:00-13:00",
+        "namaDoketer": "leana"
       }
     ]
   },
@@ -29,6 +35,13 @@
     "idDokter": 2,
     "namaDokter": "leonardo",
     "poli": 3,
-    "schedules": []
+    "schedules": [
+      {
+        "idSchedule": 0,
+        "hari": "minggu",
+        "jam": "06:00-14:00",
+        "namaDoketer": "leonardo"
+      }
+    ]
   }
 ]
