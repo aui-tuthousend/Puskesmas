@@ -17,14 +17,15 @@ public class ModelTransaction {
         if (transactions == null){
             this.transactions = new ArrayList<>();
         }
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            System.out.println("\nShutting down. Saving data to JSON file...");
-            modelGSON.writeToFile(transactions);
-        }));
+//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+////            System.out.println("\nShutting down. Saving data to JSON file...");
+//            modelGSON.writeToFile(transactions);
+//        }));
     }
 
     public void modelAddTransaction(Transaction transaction){
         transactions.add(transaction);
+        modelGSON.writeToFile(transactions);
     }
 
     public Transaction searchTransaction(int id){
@@ -34,6 +35,16 @@ public class ModelTransaction {
             }
         }
         return null;
+    }
+
+    public int getLastCode(){
+        int idx;
+        if(transactions.isEmpty()) {
+            return -1;
+        } else {
+            idx = transactions.size() - 1;
+            return transactions.get(idx).idTransaksi;
+        }
     }
 
 }
