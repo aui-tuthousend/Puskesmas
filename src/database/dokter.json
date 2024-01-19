@@ -15,7 +15,7 @@
   {
     "idDokter": 1,
     "namaDokter": "jimbe",
-    "poli": 2,
+    "poli": 1,
     "schedules": [
       {
         "idSchedule": 0,
@@ -24,5 +24,11 @@
         "namaDoketer": "jimbe"
       }
     ]
+  },
+  {
+    "idDokter": 2,
+    "namaDokter": "leonardo",
+    "poli": 3,
+    "schedules": []
   }
 ]

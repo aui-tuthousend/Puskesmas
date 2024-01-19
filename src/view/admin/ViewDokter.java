@@ -1,9 +1,8 @@
-package view.admin.CRUDdokter;
+package view.admin;
 
 import controller.DokterController;
 import node.Dokter;
 import node.Schedule;
-import view.admin.ListDokter;
 
 import javax.swing.*;
 import java.awt.*;

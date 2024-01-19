@@ -4,11 +4,9 @@ import controller.DokterController;
 import controller.PoliController;
 import node.Dokter;
 import node.Poli;
-import view.admin.CRUDdokter.EditDokter;
-import view.admin.CRUDdokter.TambahDokter;
-import view.admin.CRUDdokter.ViewDokter;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ListDokter extends JFrame {
     DokterController dokterController;
@@ -52,7 +50,7 @@ public class ListDokter extends JFrame {
             delete.setBounds(530, y, 80, 20);
 
             viewDokter.addActionListener(e -> viuDokter(dokter.idDokter, pyoli.namaPoli));
-            edit.addActionListener(e -> editDokter(dokter.idDokter, dokter.poli));
+            edit.addActionListener(e -> editDok(dokter.idDokter, dokter.poli));
             delete.addActionListener(e -> deleteDokter(dokter.idDokter));
 
             add(viewDokter);
@@ -64,7 +62,7 @@ public class ListDokter extends JFrame {
         }
 
         back.addActionListener(e -> event());
-        tambahDokter.addActionListener(e -> tambaDokter());
+        tambahDokter.addActionListener(e -> tambDok());
 
         add(back);
         add(tambahDokter);
@@ -77,17 +75,80 @@ public class ListDokter extends JFrame {
         homeAdmin.setVisible(true);
     }
 
-    public void tambaDokter(){
-        TambahDokter tambahDokter = new TambahDokter();
-        this.setVisible(false);
-        tambahDokter.setVisible(true);
+    private void tambDok() {
+        JPanel inputPanel = new JPanel();
+
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        JList<String> listView = new JList<>(listModel);
+
+        for (Poli poli: poliController.modelPoli.polis){
+            listModel.addElement(poli.namaPoli);
+        }
+
+        JTextField textField1 = new JTextField(10);
+
+        inputPanel.setLayout(new GridLayout(2, 2));
+        inputPanel.add(new JLabel("Nama:"));
+        inputPanel.add(textField1);
+        inputPanel.add(new JLabel("Pilih Poli:"));
+        inputPanel.add(listView);
+
+        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Tambah Data dokter", JOptionPane.OK_CANCEL_OPTION);
+
+        if (result == JOptionPane.OK_OPTION) {
+            int idx = listView.getSelectedIndex();
+            if (!textField1.getText().isEmpty()){
+                if (idx != -1) {
+                    dokterController.addDokter(textField1.getText(), idx);
+                    refresh();
+                    JOptionPane.showMessageDialog(this, "Dokter Berhasil Ditambah!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Pilih Poli nya banh", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Nama DOkternya banh", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }
 
-    public void editDokter(int idD, int idP){
-        EditDokter editDokter = new EditDokter(idD, idP);
-        this.setVisible(false);
-        editDokter.setVisible(true);
+    private void editDok(int idD, int idP) {
+        JPanel inputPanel = new JPanel();
+
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        JList<String> listView = new JList<>(listModel);
+
+        for (Poli poli: poliController.modelPoli.polis){
+            listModel.addElement(poli.namaPoli);
+        }
+        listView.setSelectedIndex(idP);
+        JTextField textField1 = new JTextField(10);
+        Dokter dokter = dokterController.searchDokter(idD);
+        textField1.setText(dokter.namaDokter);
+
+        inputPanel.setLayout(new GridLayout(2, 2));
+        inputPanel.add(new JLabel("Nama:"));
+        inputPanel.add(textField1);
+        inputPanel.add(new JLabel("Pilih Poli:"));
+        inputPanel.add(listView);
+
+        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Edit Data dokter", JOptionPane.OK_CANCEL_OPTION);
+
+        if (result == JOptionPane.OK_OPTION) {
+            int idx = listView.getSelectedIndex();
+            if (!textField1.getText().isEmpty()){
+                if (idx != -1) {
+                    dokterController.editDokter(idD, textField1.getText(), idx);
+                    refresh();
+                    JOptionPane.showMessageDialog(this, "Dokter Berhasil Diedit!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Pilih Poli nya banh", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Nama DOkternya banh", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }
+
 
     public void deleteDokter(int idD){
         Dokter dokter = dokterController.searchDokter(idD);
@@ -117,7 +178,4 @@ public class ListDokter extends JFrame {
         this.dispose();
         ListDokter listDokter = new ListDokter();
     }
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(ListDokter::new);
-//    }
 }
