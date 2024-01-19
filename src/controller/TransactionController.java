@@ -6,7 +6,7 @@ import node.Queue;
 import node.Transaction;
 
 public class TransactionController {
-    ModelTransaction modelTransaction;
+    public ModelTransaction modelTransaction;
 
     public TransactionController(){
         this.modelTransaction = new ModelTransaction();

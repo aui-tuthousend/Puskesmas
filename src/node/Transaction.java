@@ -6,8 +6,7 @@ public class Transaction {
     public int idTransaksi;
     public Queue antrean;
     public Poli poli;
-    String tanggal;
-
+    public String tanggal;
     public Transaction(int id, Queue antrean, Poli poli) {
         this.idTransaksi = id;
         this.antrean = antrean;

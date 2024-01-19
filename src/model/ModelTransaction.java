@@ -7,7 +7,7 @@ import node.Transaction;
 import java.util.ArrayList;
 
 public class ModelTransaction {
-    private ArrayList<Transaction> transactions;
+    public ArrayList<Transaction> transactions;
     ModelGSON modelGSON;
 
     public ModelTransaction() {

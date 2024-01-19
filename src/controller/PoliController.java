@@ -4,10 +4,7 @@ import model.ModelDokter;
 import model.ModelPoli;
 import model.ModelQueue;
 import model.ModelTransaction;
-import node.Dokter;
-import node.Pasien;
-import node.Poli;
-import node.Queue;
+import node.*;
 
 public class PoliController {
     public ModelPoli modelPoli;
@@ -43,13 +40,13 @@ public class PoliController {
         return modelPoli.searchPoli(id);
     }
 
-    public int addQueue(int idPoli, Pasien pasien, String poli){
+    public int addQueue(int idPoli, Pasien pasien, String poli, Admin atmin){
         int id = modelPoli.getLastQueueIndex(idPoli)+1;
         String k = String.valueOf(poli.charAt(0));
         String kodeP = k+id;
         node.Queue queue = new node.Queue(id, kodeP, pasien, poli);
         Poli poly = modelPoli.searchPoli(idPoli);
-        transactionController.addTransaction(queue, poly);
+        transactionController.addTransaction(queue, poly, atmin);
         modelPoli.addPoliQueue(idPoli, queue);
         modelQueue.addQueue(queue);
 
