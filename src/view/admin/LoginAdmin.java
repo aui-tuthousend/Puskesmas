@@ -1,5 +1,6 @@
 package view.admin;
 
+import node.Admin;
 import view.HomePage;
 
 import javax.swing.*;
@@ -64,7 +65,8 @@ public class LoginAdmin extends JFrame {
         String passwordReal = String.valueOf(paswod);
 
         if (uname.getText().equals("ayo")&&passwordReal.equals("123")){
-            HomeAdmin homeAdmin = new HomeAdmin();
+            Admin atmin = new Admin(uname.getText(),passwordReal);
+            HomeAdmin homeAdmin = new HomeAdmin(atmin);
             this.setVisible(false);
             homeAdmin.setVisible(true);
         } else {

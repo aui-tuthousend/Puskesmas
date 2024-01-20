@@ -1,6 +1,7 @@
 package view.admin;
 
 import controller.DokterController;
+import node.Admin;
 import node.Dokter;
 import node.Schedule;
 
@@ -11,12 +12,13 @@ public class ViewDokter extends JFrame {
     int idDokter;
     String namaPoli;
     DokterController dokterController;
-    public ViewDokter(int id, String nama){
+    Admin atmin;
+    public ViewDokter(int id, String nama, Admin admin){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);
         setLayout(null);
-
+        atmin =admin;
         idDokter = id;
         namaPoli= nama;
         dokterController = new DokterController();
@@ -59,7 +61,7 @@ public class ViewDokter extends JFrame {
     }
 
     public void event(){
-        ListDokter listDokter = new ListDokter();
+        ListDokter listDokter = new ListDokter(atmin);
         this.dispose();
         listDokter.setVisible(true);
     }
@@ -149,6 +151,6 @@ public class ViewDokter extends JFrame {
 
     public void refresh(){
         this.dispose();
-        ViewDokter viewDokter = new ViewDokter(idDokter, namaPoli);
+        ViewDokter viewDokter = new ViewDokter(idDokter, namaPoli, atmin);
     }
 }

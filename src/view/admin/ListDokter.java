@@ -2,6 +2,7 @@ package view.admin;
 
 import controller.DokterController;
 import controller.PoliController;
+import node.Admin;
 import node.Dokter;
 import node.Poli;
 
@@ -11,11 +12,13 @@ import java.awt.*;
 public class ListDokter extends JFrame {
     DokterController dokterController;
     PoliController poliController;
-    public ListDokter(){
+    Admin atmin;
+    public ListDokter(Admin admin){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);
         setLayout(null);
+        atmin = admin;
         dokterController = new DokterController();
         poliController = new PoliController();
         setResizable(false);
@@ -70,7 +73,7 @@ public class ListDokter extends JFrame {
     }
 
     public void event(){
-        HomeAdmin homeAdmin = new HomeAdmin();
+        HomeAdmin homeAdmin = new HomeAdmin(atmin);
         this.setVisible(false);
         homeAdmin.setVisible(true);
     }
@@ -169,13 +172,13 @@ public class ListDokter extends JFrame {
     }
 
     public void viuDokter(int idD, String nama){
-        ViewDokter viewDokter = new ViewDokter(idD, nama);
+        ViewDokter viewDokter = new ViewDokter(idD, nama, atmin);
         this.setVisible(false);
         viewDokter.setVisible(true);
     }
 
     public void refresh(){
         this.dispose();
-        ListDokter listDokter = new ListDokter();
+        ListDokter listDokter = new ListDokter(atmin);
     }
 }

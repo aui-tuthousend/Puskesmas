@@ -1,8 +1,6 @@
 package view.admin;
 import controller.TransactionController;
 import node.Admin;
-import node.Dokter;
-import node.Schedule;
 import node.Transaction;
 
 import javax.swing.*;
@@ -35,10 +33,10 @@ public class CetakTransaksi extends JFrame {
         int y=130;
         for (Transaction transaction: transactionController.modelTransaction.transactions){
             JLabel label = new JLabel(transaction.poli.namaPoli+" "+transaction.antrean.kodePasien+" "+transaction.antrean.pasien.namaPasien);
-            label.setBounds(165, y, 100, 20);
+            label.setBounds(165, y, 200, 20);
 
             JButton print = new JButton("cetak");
-            print.setBounds(265, y, 100, 20);
+            print.setBounds(365, y, 100, 20);
             print.addActionListener(e -> cetakTransaksi(transaction));
             add(label);
             add(print);
@@ -52,7 +50,7 @@ public class CetakTransaksi extends JFrame {
     }
 
     public void event(){
-        HomeAdmin homeAdmin = new HomeAdmin();
+        HomeAdmin homeAdmin = new HomeAdmin(atmin);
         this.dispose();
         homeAdmin.setVisible(true);
     }
@@ -60,17 +58,17 @@ public class CetakTransaksi extends JFrame {
     public void cetakTransaksi(Transaction transaction){
         inputPanel = new JPanel();
 
-        inputPanel.setLayout(new GridLayout( 20,1));
+        inputPanel.setLayout(new GridLayout( 10,1));
         inputPanel.add(new JLabel("===Puskesmas Kebonsari==="));
-        inputPanel.add(new JLabel("Kode Antrean: "+transaction.antrean.kodePasien));
-        inputPanel.add(new JLabel("Poli        : "+transaction.poli.namaPoli));
+        inputPanel.add(new JLabel("Kode Antrean : "+transaction.antrean.kodePasien));
+        inputPanel.add(new JLabel("Poli : "+transaction.poli.namaPoli));
         inputPanel.add(new JLabel("Nama Pasien : "+transaction.antrean.pasien.namaPasien));
-        inputPanel.add(new JLabel("NIK         : "+transaction.antrean.pasien.NIK));
-        inputPanel.add(new JLabel("BPJS        : "+transaction.antrean.pasien.BPJS));
-        inputPanel.add(new JLabel("Tanggal     : "+transaction.tanggal));
-        inputPanel.add(new JLabel("Admin       : "+atmin.username));
+        inputPanel.add(new JLabel("NIK : "+transaction.antrean.pasien.NIK));
+        inputPanel.add(new JLabel("BPJS : "+transaction.antrean.pasien.BPJS));
+        inputPanel.add(new JLabel("Tanggal : "+transaction.tanggal));
+        inputPanel.add(new JLabel("Admin : "+atmin.username));
 
-        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
+        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Data Transaksi Pasien", JOptionPane.OK_CANCEL_OPTION);
 
     }
 }

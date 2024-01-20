@@ -1,22 +1,24 @@
 package view.admin;
 
+import node.Admin;
 import view.HomePage;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeAdmin extends JFrame {
 
     List<JButton> buttons;
-    public HomeAdmin(){
+    Admin atmin;
+    public HomeAdmin(Admin admin){
         this.buttons = new ArrayList<>();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setLayout(null);
         setResizable(false);
+
+        this.atmin = admin;
         components();
         actionHandler();
         setVisible(true);
@@ -54,22 +56,21 @@ public class HomeAdmin extends JFrame {
 
     public void actionHandler(){
         buttons.get(0).addActionListener(e ->{
-            ListPoli listPoli = new ListPoli();
+            ListPoli listPoli = new ListPoli(atmin);
             this.setVisible(false);
             listPoli.setVisible(true);
         });
 
         buttons.get(1).addActionListener(e ->{
-            ListDokter listDokter = new ListDokter();
+            ListDokter listDokter = new ListDokter(atmin);
             this.setVisible(false);
             listDokter.setVisible(true);
         });
 
-        buttons.get(2).addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
+        buttons.get(2).addActionListener(e -> {
+            CetakTransaksi cetakTransaksi = new CetakTransaksi(atmin);
+            this.setVisible(false);
+            cetakTransaksi.setVisible(true);
         });
     }
 

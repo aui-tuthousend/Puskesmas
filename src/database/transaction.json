@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "idTransaksi": 0,
+    "antrean": {
+      "index": 1,
+      "kodePasien": "U1",
+      "pasien": {
+        "idPasien": 0,
+        "namaPasien": "el primo",
+        "alamat": "land of dawn",
+        "gender": "L",
+        "TTL": "Sidoarjo, 5 juni 2003",
+        "NIK": "3527",
+        "BPJS": "8230"
+      },
+      "poli": "Umum"
+    },
+    "poli": {
+      "idPoli": 0,
+      "namaPoli": "Umum",
+      "dokters": [],
+      "queues": [
+        {
+          "index": 0,
+          "kodePasien": "U0",
+          "pasien": {
+            "idPasien": 0,
+            "namaPasien": "el primo",
+            "alamat": "land of dawn",
+            "gender": "L",
+            "TTL": "Sidoarjo, 5 juni 2003",
+            "NIK": "3527",
+            "BPJS": "8230"
+          },
+          "poli": "Umum"
+        }
+      ]
+    },
+    "tanggal": "2024-01-20"
+  },
+  {
+    "idTransaksi": 1,
+    "antrean": {
+      "index": 1,
+      "kodePasien": "O1",
+      "pasien": {
+        "idPasien": 1,
+        "namaPasien": "liberty",
+        "alamat": "NY",
+        "gender": "P",
+        "TTL": "masangan kulon",
+        "NIK": "1234",
+        "BPJS": "5678"
+      },
+      "poli": "Organ Dalam"
+    },
+    "poli": {
+      "idPoli": 2,
+      "namaPoli": "Organ Dalam",
+      "dokters": [],
+      "queues": [
+        {
+          "index": 0,
+          "kodePasien": "O0",
+          "pasien": {
+            "idPasien": 0,
+            "namaPasien": "el primo",
+            "alamat": "land of dawn",
+            "gender": "L",
+            "TTL": "Sidoarjo, 5 juni 2003",
+            "NIK": "3527",
+            "BPJS": "8230"
+          },
+          "poli": "Organ Dalam"
+        }
+      ]
+    },
+    "tanggal": "2024-01-20"
+  }
+]

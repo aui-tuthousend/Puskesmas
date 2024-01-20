@@ -1,18 +1,20 @@
 package view.admin;
 
 import controller.PoliController;
+import node.Admin;
 import node.Poli;
 
 import javax.swing.*;
 
 public class ListPoli extends JFrame {
     PoliController poliController;
-    public ListPoli(){
+    Admin atmin;
+    public ListPoli(Admin admin){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);
         setLayout(null);
-
+        atmin = admin;
         poliController = new PoliController();
         setResizable(false);
         component();
@@ -139,14 +141,14 @@ public class ListPoli extends JFrame {
     }
 
     public void event(){
-        HomeAdmin homeAdmin = new HomeAdmin();
+        HomeAdmin homeAdmin = new HomeAdmin(atmin);
         this.setVisible(false);
         homeAdmin.setVisible(true);
     }
 
     public void refresh(){
         this.dispose();
-        ListPoli lispoli = new ListPoli();
+        ListPoli lispoli = new ListPoli(atmin);
     }
 
 //    public static void main(String[] args) {
