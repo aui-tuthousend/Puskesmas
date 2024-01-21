@@ -29,31 +29,60 @@ public class HomePage extends JFrame {
     }
 
     public void components(){
+//        gambar();
+        Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
+
         JLabel judul = new JLabel("Pendaftaran Puskesmas Online🩺");
-        judul.setBounds(350, 200, 200, 30);
+        judul.setForeground(Color.green);
+        judul.setFont(font);
+        judul.setBounds(310, 180, 300, 40);
 
-        JButton daftarPasien = new JButton("Daftar Pasien");
+        JButton daftarPasien = new JButton("registrasi pasien");
         daftarPasien.setBounds(350, 230, 200, 30);
+        daftarPasien.setForeground(Color.white);
+        daftarPasien.setBackground(Color.blue);
+        daftarPasien.setBorderPainted(false);
 
-        JButton ambilAntrean = new JButton("Ambil Antrean");
+        JButton ambilAntrean = new JButton("ambil antrean");
         ambilAntrean.setBounds(350, 270, 200, 30);
+        ambilAntrean.setForeground(Color.white);
+        ambilAntrean.setBackground(Color.blue);
+        ambilAntrean.setBorderPainted(false);
 
         JButton jadwalPrak = new JButton("Jadwal Praktek Dokter");
         jadwalPrak.setBounds(350, 310, 200, 30);
+        jadwalPrak.setForeground(Color.white);
+        jadwalPrak.setBackground(Color.blue);
+        jadwalPrak.setBorderPainted(false);
 
         JButton loginAdmin = new JButton("Login admin");
         loginAdmin.setBounds(700, 500, 150, 30);
+        loginAdmin.setForeground(Color.white);
+        loginAdmin.setBackground(Color.DARK_GRAY);
+        loginAdmin.setBorderPainted(false);
 
         daftarPasien.addActionListener(e -> daftarPasienView());
         ambilAntrean.addActionListener(e -> ambilAntreanView());
         loginAdmin.addActionListener(e -> loginAdminView());
         jadwalPrak.addActionListener(e -> jadwalPraktek());
 
+        add(judul);
         add(daftarPasien);
         add(ambilAntrean);
         add(jadwalPrak);
         add(loginAdmin);
-        add(judul);
+    }
+
+    public void gambar(){
+        ImageIcon icon = new ImageIcon("src/gambar/1211469.jpg");
+        Image gambar = icon.getImage();
+
+        Image resized = gambar.getScaledInstance(900, 600, Image.SCALE_SMOOTH);
+        ImageIcon resizedd = new ImageIcon(resized);
+        JLabel gamba = new JLabel(resizedd);
+        gamba.setBounds(0, 0, 900, 600);
+
+        add(gamba);
     }
 
     public void daftarPasienView(){

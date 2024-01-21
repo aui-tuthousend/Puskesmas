@@ -59,14 +59,14 @@ public class CetakTransaksi extends JFrame {
         inputPanel = new JPanel();
 
         inputPanel.setLayout(new GridLayout( 10,1));
-        inputPanel.add(new JLabel("===Puskesmas Kebonsari==="));
-        inputPanel.add(new JLabel("Kode Antrean : "+transaction.antrean.kodePasien));
-        inputPanel.add(new JLabel("Poli : "+transaction.poli.namaPoli));
-        inputPanel.add(new JLabel("Nama Pasien : "+transaction.antrean.pasien.namaPasien));
-        inputPanel.add(new JLabel("NIK : "+transaction.antrean.pasien.NIK));
-        inputPanel.add(new JLabel("BPJS : "+transaction.antrean.pasien.BPJS));
-        inputPanel.add(new JLabel("Tanggal : "+transaction.tanggal));
-        inputPanel.add(new JLabel("Admin : "+atmin.username));
+        inputPanel.add(new JLabel("+<<Puskesmas SidoMuncul>>+"));
+        inputPanel.add(new JLabel("  Kode Antrean : "+transaction.antrean.kodePasien));
+        inputPanel.add(new JLabel("  Poli : "+transaction.poli.namaPoli));
+        inputPanel.add(new JLabel("  Nama Pasien : "+transaction.antrean.pasien.namaPasien));
+        inputPanel.add(new JLabel("  NIK : "+transaction.antrean.pasien.NIK));
+        inputPanel.add(new JLabel("  BPJS : "+transaction.antrean.pasien.BPJS));
+        inputPanel.add(new JLabel("  Tanggal : "+transaction.tanggal));
+        inputPanel.add(new JLabel("  Admin : "+atmin.username));
 
         int result = JOptionPane.showConfirmDialog(this, inputPanel, "Data Transaksi Pasien", JOptionPane.OK_CANCEL_OPTION);
 
