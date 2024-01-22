@@ -50,7 +50,8 @@ public class HomePage extends JFrame {
             RoundButton button = new RoundButton(txt);
             button.setBounds(350, y, 200, 30);
             button.setForeground(Color.white);
-            button.setBackground(Color.gray);
+            button.setBackground(Color.black);
+            button.setFocusPainted(false);
             button.setBorderPainted(false);
 
             y+=40;
@@ -60,7 +61,7 @@ public class HomePage extends JFrame {
 
         RoundButton loginAdmin = new RoundButton("Login admin");
         loginAdmin.setBounds(700, 500, 150, 30);
-        loginAdmin.setForeground(Color.white);
+        loginAdmin.setForeground(Color.blue);
         loginAdmin.setBackground(Color.DARK_GRAY);
         loginAdmin.setBorderPainted(false);
 
@@ -107,25 +108,25 @@ public class HomePage extends JFrame {
 //        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
 //
 //    }
-public void jadwalPraktek() {
-    inputPanel = new JPanel();
+    public void jadwalPraktek() {
+        inputPanel = new JPanel();
 
-    inputPanel.setLayout(new GridLayout(0, 1));
-    for (Dokter dokter : dokterController.modelDokter.dokters) {
-        inputPanel.add(new JLabel("Dokter : " + dokter.namaDokter));
-        Poli poli = poliController.searchPoli(dokter.poli);
-        inputPanel.add(new JLabel("Poli   : " + poli.namaPoli));
-        for (Schedule schedule : dokter.schedules) {
-            inputPanel.add(new JLabel(schedule.hari + " " + schedule.jam));
+        inputPanel.setLayout(new GridLayout(0, 1));
+        for (Dokter dokter : dokterController.modelDokter.dokters) {
+            inputPanel.add(new JLabel("Dokter : " + dokter.namaDokter));
+            Poli poli = poliController.searchPoli(dokter.poli);
+            inputPanel.add(new JLabel("Poli   : " + poli.namaPoli));
+            for (Schedule schedule : dokter.schedules) {
+                inputPanel.add(new JLabel(schedule.hari + " " + schedule.jam));
+            }
+            inputPanel.add(new JLabel("\n"));
         }
-        inputPanel.add(new JLabel("\n"));
+
+        JScrollPane scrollPane = new JScrollPane(inputPanel);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+        int result = JOptionPane.showConfirmDialog(this, scrollPane, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
     }
-
-    JScrollPane scrollPane = new JScrollPane(inputPanel);
-    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-    int result = JOptionPane.showConfirmDialog(this, scrollPane, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
-}
 
     public void actionHandler(){
         buttons.get(0).addActionListener(e ->{
