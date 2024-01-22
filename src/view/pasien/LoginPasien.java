@@ -82,4 +82,5 @@ public class LoginPasien extends JFrame {
         this.setVisible(false);
         homePage.setVisible(true);
     }
+
 }

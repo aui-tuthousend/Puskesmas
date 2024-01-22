@@ -1,46 +1,14 @@
 [
   {
     "idDokter": 0,
-    "namaDokter": "leana",
+    "namaDokter": "Leanna",
     "poli": 0,
     "schedules": [
       {
         "idSchedule": 0,
-        "hari": "kamis",
-        "jam": "10:00-14:00",
-        "namaDoketer": "leana"
-      },
-      {
-        "idSchedule": 1,
-        "hari": "senin",
-        "jam": "10:00-13:00",
-        "namaDoketer": "leana"
-      }
-    ]
-  },
-  {
-    "idDokter": 1,
-    "namaDokter": "Lynch",
-    "poli": 1,
-    "schedules": [
-      {
-        "idSchedule": 0,
-        "hari": "selasa",
-        "jam": "07:00-15:00",
-        "namaDoketer": "jimbe"
-      }
-    ]
-  },
-  {
-    "idDokter": 2,
-    "namaDokter": "leonardo",
-    "poli": 3,
-    "schedules": [
-      {
-        "idSchedule": 0,
         "hari": "minggu",
-        "jam": "06:00-14:00",
-        "namaDoketer": "leonardo"
+        "jam": "12:00-13:00",
+        "namaDoketer": "Leanna"
       }
     ]
   }

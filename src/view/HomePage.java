@@ -1,7 +1,9 @@
 package view;
 
 import controller.DokterController;
+import controller.PoliController;
 import node.Dokter;
+import node.Poli;
 import node.Schedule;
 import view.admin.LoginAdmin;
 import view.pasien.LoginPasien;
@@ -16,6 +18,7 @@ public class HomePage extends JFrame {
     RegisPasien regisPasien;
     JPanel inputPanel;
     DokterController dokterController;
+    PoliController poliController;
     ArrayList<JButton> buttons;
 
 
@@ -27,6 +30,7 @@ public class HomePage extends JFrame {
 
         buttons = new ArrayList<>();
         dokterController = new DokterController();
+        poliController=new PoliController();
         components();
         actionHandler();
         setVisible(true);
@@ -66,7 +70,6 @@ public class HomePage extends JFrame {
 
         add(loginAdmin);
         gambar();
-
     }
 
     public void gambar(){
@@ -90,9 +93,11 @@ public class HomePage extends JFrame {
     public void jadwalPraktek(){
         inputPanel = new JPanel();
 
-        inputPanel.setLayout(new GridLayout( 10,1));
+        inputPanel.setLayout(new GridLayout( 30,1));
         for (Dokter dokter: dokterController.modelDokter.dokters){
             inputPanel.add(new JLabel("Dokter : "+dokter.namaDokter));
+            Poli poli = poliController.searchPoli(dokter.poli);
+            inputPanel.add(new JLabel("Poli   : "+poli.namaPoli));
             for (Schedule schedule: dokter.schedules){
                 inputPanel.add(new JLabel(schedule.hari+" "+schedule.jam));
             }

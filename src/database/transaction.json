@@ -76,5 +76,142 @@
       ]
     },
     "tanggal": "2024-01-20"
+  },
+  {
+    "idTransaksi": 2,
+    "antrean": {
+      "index": 2,
+      "kodePasien": "O2",
+      "pasien": {
+        "idPasien": 3,
+        "namaPasien": "alip",
+        "alamat": "juanda",
+        "gender": "L",
+        "TTL": "tengah waru",
+        "NIK": "9000",
+        "BPJS": ""
+      },
+      "poli": "Organ Dalam"
+    },
+    "poli": {
+      "idPoli": 2,
+      "namaPoli": "Organ Dalam",
+      "dokters": [],
+      "queues": [
+        {
+          "index": 0,
+          "kodePasien": "O0",
+          "pasien": {
+            "idPasien": 0,
+            "namaPasien": "el primo",
+            "alamat": "land of dawn",
+            "gender": "L",
+            "TTL": "Sidoarjo, 5 juni 2003",
+            "NIK": "3527",
+            "BPJS": "8230"
+          },
+          "poli": "Organ Dalam"
+        },
+        {
+          "index": 1,
+          "kodePasien": "O1",
+          "pasien": {
+            "idPasien": 1,
+            "namaPasien": "liberty",
+            "alamat": "NY",
+            "gender": "P",
+            "TTL": "masangan kulon",
+            "NIK": "1234",
+            "BPJS": "5678"
+          },
+          "poli": "Organ Dalam"
+        }
+      ]
+    },
+    "tanggal": "2024-01-22"
+  },
+  {
+    "idTransaksi": 3,
+    "antrean": {
+      "index": 1,
+      "kodePasien": "G1",
+      "pasien": {
+        "idPasien": 0,
+        "namaPasien": "el primo",
+        "alamat": "land of dawn",
+        "gender": "L",
+        "TTL": "Sidoarjo, 5 juni 2003",
+        "NIK": "3527",
+        "BPJS": "8230"
+      },
+      "poli": "Gigi"
+    },
+    "poli": {
+      "idPoli": 1,
+      "namaPoli": "Gigi",
+      "dokters": [
+        {
+          "idDokter": 0,
+          "namaDokter": "hadid",
+          "poli": 1
+        }
+      ],
+      "queues": [
+        {
+          "index": 0,
+          "kodePasien": "G0",
+          "pasien": {
+            "idPasien": 2,
+            "namaPasien": "faqih",
+            "alamat": "semolo",
+            "gender": "p",
+            "TTL": "kalimantan",
+            "NIK": "1231",
+            "BPJS": "213"
+          },
+          "poli": "Gigi"
+        }
+      ]
+    },
+    "tanggal": "2024-01-22"
+  },
+  {
+    "idTransaksi": 4,
+    "antrean": {
+      "index": 1,
+      "kodePasien": "U1",
+      "pasien": {
+        "idPasien": 3,
+        "namaPasien": "alip",
+        "alamat": "juanda",
+        "gender": "L",
+        "TTL": "tengah waru",
+        "NIK": "9000",
+        "BPJS": ""
+      },
+      "poli": "Umum"
+    },
+    "poli": {
+      "idPoli": 0,
+      "namaPoli": "Umum",
+      "dokters": [],
+      "queues": [
+        {
+          "index": 0,
+          "kodePasien": "U0",
+          "pasien": {
+            "idPasien": 0,
+            "namaPasien": "el primo",
+            "alamat": "land of dawn",
+            "gender": "L",
+            "TTL": "Sidoarjo, 5 juni 2003",
+            "NIK": "3527",
+            "BPJS": "8230"
+          },
+          "poli": "Umum"
+        }
+      ]
+    },
+    "tanggal": "2024-01-22"
   }
 ]

@@ -75,6 +75,8 @@ public class LoginAdmin extends JFrame {
         }
     }
 
+
+
     public void event(){
         HomePage homePage = new HomePage();
         this.setVisible(false);

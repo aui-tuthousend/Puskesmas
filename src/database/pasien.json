@@ -25,5 +25,14 @@
     "TTL": "kalimantan",
     "NIK": "1231",
     "BPJS": "213"
+  },
+  {
+    "idPasien": 3,
+    "namaPasien": "alip",
+    "alamat": "juanda",
+    "gender": "L",
+    "TTL": "tengah waru",
+    "NIK": "9000",
+    "BPJS": ""
   }
 ]

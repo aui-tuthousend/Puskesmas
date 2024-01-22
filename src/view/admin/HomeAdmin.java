@@ -4,6 +4,7 @@ import node.Admin;
 import view.HomePage;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,7 @@ public class HomeAdmin extends JFrame {
         back.addActionListener(e -> event());
         add(back);
         add(label);
+        gambar();
     }
 
     public void event(){
@@ -72,6 +74,18 @@ public class HomeAdmin extends JFrame {
             this.setVisible(false);
             cetakTransaksi.setVisible(true);
         });
+    }
+
+    public void gambar(){
+        ImageIcon icon = new ImageIcon("src/gambar/1211469.jpg");
+        Image gambar = icon.getImage();
+
+        Image resized = gambar.getScaledInstance(900, 600, Image.SCALE_SMOOTH);
+        ImageIcon resizedd = new ImageIcon(resized);
+        JLabel gamba = new JLabel(resizedd);
+        gamba.setBounds(0, 0, 900, 600);
+
+        add(gamba);
     }
 
 }
