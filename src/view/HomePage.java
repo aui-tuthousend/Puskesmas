@@ -9,12 +9,14 @@ import view.pasien.RegisPasien;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class HomePage extends JFrame {
     LoginPasien loginPasien;
     RegisPasien regisPasien;
     JPanel inputPanel;
     DokterController dokterController;
+    ArrayList<JButton> buttons;
 
 
     public HomePage(){
@@ -22,14 +24,15 @@ public class HomePage extends JFrame {
         setSize(900, 600);
         setLayout(null);
         setResizable(false);
-        dokterController = new DokterController();
 
+        buttons = new ArrayList<>();
+        dokterController = new DokterController();
         components();
+        actionHandler();
         setVisible(true);
     }
 
     public void components(){
-//        gambar();
         Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
 
         JLabel judul = new JLabel("Pendaftaran Puskesmas Online🩺");
@@ -37,23 +40,19 @@ public class HomePage extends JFrame {
         judul.setFont(font);
         judul.setBounds(310, 180, 300, 40);
 
-        JButton daftarPasien = new JButton("registrasi pasien");
-        daftarPasien.setBounds(350, 230, 200, 30);
-        daftarPasien.setForeground(Color.white);
-        daftarPasien.setBackground(Color.blue);
-        daftarPasien.setBorderPainted(false);
+        String[] data = {"registrasi pasien", "ambil antrean", "jadwal praktek dokter"};
+        int y = 230;
+        for (String txt: data){
+            JButton button = new JButton(txt);
+            button.setBounds(350, y, 200, 30);
+            button.setForeground(Color.white);
+            button.setBackground(Color.blue);
+            button.setBorderPainted(false);
 
-        JButton ambilAntrean = new JButton("ambil antrean");
-        ambilAntrean.setBounds(350, 270, 200, 30);
-        ambilAntrean.setForeground(Color.white);
-        ambilAntrean.setBackground(Color.blue);
-        ambilAntrean.setBorderPainted(false);
-
-        JButton jadwalPrak = new JButton("Jadwal Praktek Dokter");
-        jadwalPrak.setBounds(350, 310, 200, 30);
-        jadwalPrak.setForeground(Color.white);
-        jadwalPrak.setBackground(Color.blue);
-        jadwalPrak.setBorderPainted(false);
+            y+=40;
+            buttons.add(button);
+            add(button);
+        }
 
         JButton loginAdmin = new JButton("Login admin");
         loginAdmin.setBounds(700, 500, 150, 30);
@@ -61,16 +60,13 @@ public class HomePage extends JFrame {
         loginAdmin.setBackground(Color.DARK_GRAY);
         loginAdmin.setBorderPainted(false);
 
-        daftarPasien.addActionListener(e -> daftarPasienView());
-        ambilAntrean.addActionListener(e -> ambilAntreanView());
         loginAdmin.addActionListener(e -> loginAdminView());
-        jadwalPrak.addActionListener(e -> jadwalPraktek());
 
         add(judul);
-        add(daftarPasien);
-        add(ambilAntrean);
-        add(jadwalPrak);
+
         add(loginAdmin);
+        gambar();
+
     }
 
     public void gambar(){
@@ -83,18 +79,6 @@ public class HomePage extends JFrame {
         gamba.setBounds(0, 0, 900, 600);
 
         add(gamba);
-    }
-
-    public void daftarPasienView(){
-        regisPasien = new RegisPasien();
-        this.setVisible(false);
-        regisPasien.setVisible(true);
-    }
-
-    public void ambilAntreanView(){
-        loginPasien = new LoginPasien();
-        this.setVisible(false);
-        loginPasien.setVisible(true);
     }
 
     public void loginAdminView(){
@@ -117,6 +101,22 @@ public class HomePage extends JFrame {
         }
         int result = JOptionPane.showConfirmDialog(this, inputPanel, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
 
+    }
+
+    public void actionHandler(){
+        buttons.get(0).addActionListener(e ->{
+            regisPasien = new RegisPasien();
+            this.setVisible(false);
+            regisPasien.setVisible(true);
+        });
+
+        buttons.get(1).addActionListener(e ->{
+            loginPasien = new LoginPasien();
+            this.setVisible(false);
+            loginPasien.setVisible(true);
+        });
+
+        buttons.get(2).addActionListener(e -> jadwalPraktek());
     }
 
     public static void main(String[] args) {
