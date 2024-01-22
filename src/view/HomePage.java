@@ -37,9 +37,9 @@ public class HomePage extends JFrame {
     }
 
     public void components(){
-        Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
 
         JLabel judul = new JLabel("Pendaftaran Puskesmas Online🩺");
+        Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
         judul.setForeground(Color.green);
         judul.setFont(font);
         judul.setBounds(310, 180, 300, 40);
@@ -47,10 +47,10 @@ public class HomePage extends JFrame {
         String[] data = {"registrasi pasien", "ambil antrean", "jadwal praktek dokter"};
         int y = 230;
         for (String txt: data){
-            JButton button = new JButton(txt);
+            RoundButton button = new RoundButton(txt);
             button.setBounds(350, y, 200, 30);
             button.setForeground(Color.white);
-            button.setBackground(Color.blue);
+            button.setBackground(Color.gray);
             button.setBorderPainted(false);
 
             y+=40;
@@ -58,7 +58,7 @@ public class HomePage extends JFrame {
             add(button);
         }
 
-        JButton loginAdmin = new JButton("Login admin");
+        RoundButton loginAdmin = new RoundButton("Login admin");
         loginAdmin.setBounds(700, 500, 150, 30);
         loginAdmin.setForeground(Color.white);
         loginAdmin.setBackground(Color.DARK_GRAY);
@@ -90,23 +90,42 @@ public class HomePage extends JFrame {
         loginView.setVisible(true);
     }
 
-    public void jadwalPraktek(){
-        inputPanel = new JPanel();
+//    public void jadwalPraktek(){
+//        inputPanel = new JPanel();
+//
+//        inputPanel.setLayout(new GridLayout( 30,1));
+//        for (Dokter dokter: dokterController.modelDokter.dokters){
+//            inputPanel.add(new JLabel("Dokter : "+dokter.namaDokter));
+//            Poli poli = poliController.searchPoli(dokter.poli);
+//            inputPanel.add(new JLabel("Poli   : "+poli.namaPoli));
+//            for (Schedule schedule: dokter.schedules){
+//                inputPanel.add(new JLabel(schedule.hari+" "+schedule.jam));
+//            }
+//            inputPanel.add(new JLabel("\n"));
+//
+//        }
+//        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
+//
+//    }
+public void jadwalPraktek() {
+    inputPanel = new JPanel();
 
-        inputPanel.setLayout(new GridLayout( 30,1));
-        for (Dokter dokter: dokterController.modelDokter.dokters){
-            inputPanel.add(new JLabel("Dokter : "+dokter.namaDokter));
-            Poli poli = poliController.searchPoli(dokter.poli);
-            inputPanel.add(new JLabel("Poli   : "+poli.namaPoli));
-            for (Schedule schedule: dokter.schedules){
-                inputPanel.add(new JLabel(schedule.hari+" "+schedule.jam));
-            }
-            inputPanel.add(new JLabel("\n"));
-
+    inputPanel.setLayout(new GridLayout(0, 1));
+    for (Dokter dokter : dokterController.modelDokter.dokters) {
+        inputPanel.add(new JLabel("Dokter : " + dokter.namaDokter));
+        Poli poli = poliController.searchPoli(dokter.poli);
+        inputPanel.add(new JLabel("Poli   : " + poli.namaPoli));
+        for (Schedule schedule : dokter.schedules) {
+            inputPanel.add(new JLabel(schedule.hari + " " + schedule.jam));
         }
-        int result = JOptionPane.showConfirmDialog(this, inputPanel, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
-
+        inputPanel.add(new JLabel("\n"));
     }
+
+    JScrollPane scrollPane = new JScrollPane(inputPanel);
+    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+    int result = JOptionPane.showConfirmDialog(this, scrollPane, "Jadwal Praktek dokter", JOptionPane.OK_CANCEL_OPTION);
+}
 
     public void actionHandler(){
         buttons.get(0).addActionListener(e ->{

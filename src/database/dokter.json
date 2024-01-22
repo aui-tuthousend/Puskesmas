@@ -11,5 +11,31 @@
         "namaDoketer": "Leanna"
       }
     ]
+  },
+  {
+    "idDokter": 1,
+    "namaDokter": "Leonard",
+    "poli": 0,
+    "schedules": [
+      {
+        "idSchedule": 0,
+        "hari": "jumat",
+        "jam": "09:00-11:00",
+        "namaDoketer": "Leonard"
+      }
+    ]
+  },
+  {
+    "idDokter": 2,
+    "namaDokter": "Oliver",
+    "poli": 0,
+    "schedules": [
+      {
+        "idSchedule": 0,
+        "hari": "senin",
+        "jam": "13:00-19:00",
+        "namaDoketer": "Oliver"
+      }
+    ]
   }
 ]

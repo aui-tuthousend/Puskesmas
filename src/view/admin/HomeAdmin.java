@@ -2,6 +2,7 @@ package view.admin;
 
 import node.Admin;
 import view.HomePage;
+import view.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +19,7 @@ public class HomeAdmin extends JFrame {
         setSize(900, 600);
         setLayout(null);
         setResizable(false);
-
+//        add(new JS)
         this.atmin = admin;
         components();
         actionHandler();
@@ -26,18 +27,25 @@ public class HomeAdmin extends JFrame {
     }
 
     public void components(){
-        JButton back = new JButton("LogOut");
+        RoundButton back = new RoundButton("LogOut");
         back.setBounds(30, 30, 90, 30);
+
+        Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
 
         JLabel label = new JLabel("Menu Admin");
         label.setBounds(165, 120, 200, 20);
+        label.setForeground(Color.green);
+        label.setFont(font);
 
 
         String[] data = {"List Poli", "List Dokter", "Cetak Transaksi"};
         int y = 150;
         for (String txt: data){
-            JButton button = new JButton(txt);
+            RoundButton button = new RoundButton(txt);
             button.setBounds(165, y, 200, 50);
+            button.setForeground(Color.white);
+            button.setBackground(Color.gray);
+            button.setBorderPainted(false);
 
             y+=65;
             buttons.add(button);
