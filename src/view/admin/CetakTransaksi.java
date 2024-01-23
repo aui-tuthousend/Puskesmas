@@ -27,7 +27,7 @@ public class CetakTransaksi extends JFrame {
         JButton back = new JButton("Back");
         back.setBounds(30, 30, 90, 30);
 
-        JLabel judul = new JLabel("List Dokter");
+        JLabel judul = new JLabel("List Transaksi");
         judul.setBounds(165, 90, 100, 20);
 
         int y=130;

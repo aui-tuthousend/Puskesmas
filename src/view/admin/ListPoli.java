@@ -123,7 +123,7 @@ public class ListPoli extends JFrame {
 
     public void deletePoli(int id){
         Poli poli = poliController.searchPoli(id);
-        if (poli.queues.isEmpty() && poli.dokters.isEmpty()){
+        if (poli.queues.isEmpty()){
             int result = JOptionPane.showConfirmDialog(
                     null,
                     "Apakah Anda yakin ingin menghapus?",

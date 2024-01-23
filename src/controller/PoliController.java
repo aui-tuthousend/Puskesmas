@@ -54,16 +54,4 @@ public class PoliController {
     }
 
 
-    public void addDoctor(int idPoli, Dokter dokter){
-        modelPoli.addPoliDoctor(idPoli, dokter);
-    }
-
-    public void viewPoliDoctor(int id){
-        modelPoli.viewPoliDokter(id);
-    }
-
-    public void viewAllPoli(){
-        modelPoli.viewAllPoli();
-    }
-
 }

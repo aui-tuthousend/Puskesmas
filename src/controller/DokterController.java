@@ -1,8 +1,10 @@
 package controller;
 
 import model.ModelDokter;
+import model.ModelPoli;
 import model.ModelSchedule;
 import node.Dokter;
+import node.Poli;
 import node.Schedule;
 
 import java.util.ArrayList;
@@ -10,19 +12,23 @@ import java.util.ArrayList;
 public class DokterController {
     public ModelDokter modelDokter;
     public ModelSchedule modelSchedule;
+    ModelPoli modelPoli;
 
     public DokterController() {
         this.modelDokter = new ModelDokter();
         this.modelSchedule = new ModelSchedule();
+        this.modelPoli = new ModelPoli();
     }
 
-    public void addDokter(String nama, int poli){
+    public void addDokter(String nama, int idPoli){
         int id = modelDokter.getLastCode()+1;
+        Poli poli = modelPoli.searchPoli(idPoli);
         Dokter dokter = new Dokter(id, nama, poli);
         modelDokter.addDokterModel(dokter);
     }
 
-    public void editDokter(int id, String nama, int poli){
+    public void editDokter(int id, String nama, int idPoli){
+        Poli poli = modelPoli.searchPoli(idPoli);
         modelDokter.editDokter(id, nama, poli);
     }
 
@@ -34,9 +40,6 @@ public class DokterController {
         return modelDokter.searchDokter(id);
     }
 
-    public void viewAllDoctor(){
-        modelDokter.viewAllDoctor();
-    }
 
     public void addSchedule(int idDokter, String hari, String jam){
         Dokter dokter = modelDokter.searchDokter(idDokter);

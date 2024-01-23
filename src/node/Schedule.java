@@ -12,9 +12,4 @@ public class Schedule {
         this.jam = jam;
         this.namaDoketer = namaDoketer;
     }
-
-    public void viewJadwal(){
-        System.out.println("Hari : "+hari);
-        System.out.println("Jam  : "+jam);
-    }
 }

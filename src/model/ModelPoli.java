@@ -47,17 +47,6 @@ public class ModelPoli {
             return polis.get(idx).idPoli;
         }
     }
-    public void addPoliDoctor(int id, Dokter dokter){
-        Poli poli = searchPoli(id);
-        poli.addDokter(dokter);
-        modelGSON.writeToFile(polis);
-    }
-
-//    public void removePoliDoctor(int idPoli, Dokter dokter){
-//        Poli poli = searchPoli(idPoli);
-//        poli.removeDokter(dokter);
-//        modelGSON.writeToFile(polis);
-//    }
     public void addPoliQueue(int id, Queue queue){
         Poli poli = searchPoli(id);
         polis.get(poli.idPoli).addQueue(queue);
@@ -84,17 +73,6 @@ public class ModelPoli {
             return poli.queues.get(idx).index;
         }
     }
-    public void viewPoliDokter(int id){
-        Poli poli = searchPoli(id);
-        for (Dokter dokter: poli.dokters){
-            dokter.viewDokter();
-        }
-    }
 
-    public void viewAllPoli(){
-        for (Poli poli: polis){
-            poli.viewPoli();
-        }
-    }
 
 }

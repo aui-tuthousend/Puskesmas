@@ -39,8 +39,7 @@ public class ListDokter extends JFrame {
         for (Dokter dokter: dokterController.modelDokter.dokters){
             JLabel label = new JLabel(dokter.namaDokter);
             label.setBounds(165, y, 100, 20);
-            Poli pyoli = poliController.searchPoli(dokter.poli);
-            JLabel poli = new JLabel(pyoli.namaPoli);
+            JLabel poli = new JLabel(dokter.poli.namaPoli);
             poli.setBounds(265, y, 100, 20);
 
             JButton viewDokter = new JButton("view");
@@ -52,8 +51,8 @@ public class ListDokter extends JFrame {
             JButton delete = new JButton("hapus");
             delete.setBounds(530, y, 80, 20);
 
-            viewDokter.addActionListener(e -> viuDokter(dokter.idDokter, pyoli.namaPoli));
-            edit.addActionListener(e -> editDok(dokter.idDokter, dokter.poli));
+            viewDokter.addActionListener(e -> viuDokter(dokter.idDokter, dokter.poli.namaPoli));
+            edit.addActionListener(e -> editDok(dokter.idDokter, dokter.poli.idPoli));
             delete.addActionListener(e -> deleteDokter(dokter.idDokter));
 
             add(viewDokter);

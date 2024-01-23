@@ -60,7 +60,7 @@ public class LoginPasien extends JFrame {
     public void lojinBang() {
         boolean found = false;
 
-        for (Pasien pasien : ModelPasien.pasiens) {
+        for (Pasien pasien : pasienController.modelPasien.pasiens) {
             if (uname.getText().equals(pasien.NIK) || uname.getText().equals(pasien.BPJS)) {
                 found = true;
                 pilihPoli = new PilihPoli(pasien.idPasien);

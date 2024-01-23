@@ -2,13 +2,12 @@ package model;
 
 import com.google.gson.reflect.TypeToken;
 import modelGSON.ModelGSON;
-import node.Dokter;
 import node.Pasien;
 
 import java.util.ArrayList;
 
 public class ModelPasien {
-    public static ArrayList<Pasien> pasiens;
+    public ArrayList<Pasien> pasiens;
     ModelGSON modelGSON;
 
     public ModelPasien(){
@@ -18,16 +17,11 @@ public class ModelPasien {
         if (pasiens == null){
             this.pasiens = new ArrayList<>();
         }
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            System.out.println("\nShutting down. Saving data to JSON file...");
-            modelGSON.writeToFile(pasiens);
-        }));
     }
 
     public void addPasienModel(Pasien pasien){
         this.pasiens.add(pasien);
         modelGSON.writeToFile(pasiens);
-//        System.out.println("GG");
     }
     public Pasien searchPasien(int id){
         for (Pasien pasien: pasiens){

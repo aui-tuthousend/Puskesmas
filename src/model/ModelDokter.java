@@ -32,7 +32,7 @@ public class ModelDokter {
         modelGSON.writeToFile(dokters);
     }
 
-    public void editDokter(int id, String nama, int idP){
+    public void editDokter(int id, String nama, Poli idP){
         Dokter dokter = searchDokter(id);
         dokter.namaDokter = nama;
         dokter.poli = idP;
@@ -90,10 +90,4 @@ public class ModelDokter {
         modelGSON.writeToFile(dokters);
     }
 
-    public void viewAllDoctor(){
-        System.out.println("List Seluruh Dokter: ");
-        for (Dokter dokter: dokters){
-            dokter.viewDokter();
-        }
-    }
 }
