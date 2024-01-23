@@ -125,8 +125,5 @@ public class HomePage extends JFrame {
         buttons.get(2).addActionListener(e -> jadwalPraktek());
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(HomePage::new);
-    }
 
 }
