@@ -1,8 +1,10 @@
 package view.admin;
 
 import controller.DokterController;
+import controller.PoliController;
 import node.Admin;
 import node.Dokter;
+import node.Poli;
 import node.Schedule;
 
 import javax.swing.*;
@@ -10,18 +12,20 @@ import java.awt.*;
 
 public class ViewDokter extends JFrame {
     int idDokter;
-    String namaPoli;
+    int idPoli;
     DokterController dokterController;
+    PoliController poliController;
     Admin atmin;
-    public ViewDokter(int id, String nama, Admin admin){
+    public ViewDokter(int id, int idPol, Admin admin){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setVisible(true);
         setLayout(null);
         atmin =admin;
         idDokter = id;
-        namaPoli= nama;
+        idPoli= idPol;
         dokterController = new DokterController();
+        poliController = new PoliController();
 
         setResizable(false);
         component();
@@ -38,7 +42,8 @@ public class ViewDokter extends JFrame {
         JLabel namaDok = new JLabel(dokter.namaDokter);
         namaDok.setBounds(200, 180, 300, 30);
 
-        JLabel namaP = new JLabel(namaPoli);
+        Poli poll = poliController.searchPoli(dokter.poli);
+        JLabel namaP = new JLabel(poll.namaPoli);
         namaP.setBounds(200, 200, 300, 30);
 
         JLabel jadPrak = new JLabel("Jadwal Praktek");
@@ -151,6 +156,6 @@ public class ViewDokter extends JFrame {
 
     public void refresh(){
         this.dispose();
-        ViewDokter viewDokter = new ViewDokter(idDokter, namaPoli, atmin);
+        ViewDokter viewDokter = new ViewDokter(idDokter, idPoli, atmin);
     }
 }

@@ -1,19 +1,21 @@
 [
   {
     "idDokter": 0,
-    "namaDokter": "Jayson",
-    "poli": {
-      "idPoli": 0,
-      "namaPoli": "Umum",
-      "queues": []
-    },
+    "namaDokter": "Dr. Soetomo",
+    "poli": 0,
     "schedules": [
       {
         "idSchedule": 0,
-        "hari": "senin",
-        "jam": "19:00-20:00",
-        "namaDoketer": "Jayson"
+        "hari": "bendino",
+        "jam": "pitu",
+        "namaDoketer": "Dr. Soetomo"
       }
     ]
+  },
+  {
+    "idDokter": 1,
+    "namaDokter": "Dr. Sutrisno",
+    "poli": 1,
+    "schedules": []
   }
 ]

@@ -22,14 +22,13 @@ public class DokterController {
 
     public void addDokter(String nama, int idPoli){
         int id = modelDokter.getLastCode()+1;
-        Poli poli = modelPoli.searchPoli(idPoli);
-        Dokter dokter = new Dokter(id, nama, poli);
+        Dokter dokter = new Dokter(id, nama, idPoli);
         modelDokter.addDokterModel(dokter);
     }
 
     public void editDokter(int id, String nama, int idPoli){
-        Poli poli = modelPoli.searchPoli(idPoli);
-        modelDokter.editDokter(id, nama, poli);
+//        Poli poli = modelPoli.searchPoli(idPoli);
+        modelDokter.editDokter(id, nama, idPoli);
     }
 
     public void deleteDokter(int id){

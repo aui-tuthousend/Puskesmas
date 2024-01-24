@@ -32,7 +32,7 @@ public class CetakTransaksi extends JFrame {
 
         int y=130;
         for (Transaction transaction: transactionController.modelTransaction.transactions){
-            JLabel label = new JLabel(transaction.poli.namaPoli+" "+transaction.antrean.kodePasien+" "+transaction.antrean.pasien.namaPasien);
+            JLabel label = new JLabel(transaction.poli+" "+transaction.antrean.kodePasien+" "+transaction.antrean.pasien.namaPasien);
             label.setBounds(165, y, 200, 20);
 
             JButton print = new JButton("cetak");
@@ -61,7 +61,7 @@ public class CetakTransaksi extends JFrame {
         inputPanel.setLayout(new GridLayout( 10,1));
         inputPanel.add(new JLabel("+<<Puskesmas SidoMuncul>>+"));
         inputPanel.add(new JLabel("  Kode Antrean : "+transaction.antrean.kodePasien));
-        inputPanel.add(new JLabel("  Poli : "+transaction.poli.namaPoli));
+        inputPanel.add(new JLabel("  Poli : "+transaction.poli));
         inputPanel.add(new JLabel("  Nama Pasien : "+transaction.antrean.pasien.namaPasien));
         inputPanel.add(new JLabel("  NIK : "+transaction.antrean.pasien.NIK));
         inputPanel.add(new JLabel("  BPJS : "+transaction.antrean.pasien.BPJS));

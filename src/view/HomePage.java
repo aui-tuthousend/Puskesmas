@@ -3,6 +3,7 @@ package view;
 import controller.DokterController;
 import controller.PoliController;
 import node.Dokter;
+import node.Poli;
 import node.Schedule;
 import view.admin.LoginAdmin;
 import view.pasien.LoginPasien;
@@ -95,7 +96,8 @@ public class HomePage extends JFrame {
         inputPanel.setLayout(new GridLayout(0, 1));
         for (Dokter dokter : dokterController.modelDokter.dokters) {
             inputPanel.add(new JLabel("Dokter : " + dokter.namaDokter));
-            inputPanel.add(new JLabel("Poli   : " + dokter.poli.namaPoli));
+            Poli poll = poliController.searchPoli(dokter.poli);
+            inputPanel.add(new JLabel("Poli   : " + poll.namaPoli));
             for (Schedule schedule : dokter.schedules) {
                 inputPanel.add(new JLabel(schedule.hari + " " + schedule.jam));
             }

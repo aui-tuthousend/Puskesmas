@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Dokter {
     public int idDokter;
     public String namaDokter;
-    public Poli poli;
+    public int poli;
     public ArrayList<Schedule> schedules;
 
-    public Dokter(int idDokter, String namaDokter, Poli poli) {
+    public Dokter(int idDokter, String namaDokter, int poli) {
         this.idDokter = idDokter;
         this.namaDokter = namaDokter;
         this.poli = poli;

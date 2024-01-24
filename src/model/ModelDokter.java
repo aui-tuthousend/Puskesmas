@@ -32,7 +32,7 @@ public class ModelDokter {
         modelGSON.writeToFile(dokters);
     }
 
-    public void editDokter(int id, String nama, Poli idP){
+    public void editDokter(int id, String nama, int idP){
         Dokter dokter = searchDokter(id);
         dokter.namaDokter = nama;
         dokter.poli = idP;

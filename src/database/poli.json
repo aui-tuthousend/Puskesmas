@@ -1,22 +1,12 @@
 [
   {
     "idPoli": 0,
+    "namaPoli": "THT",
+    "queues": []
+  },
+  {
+    "idPoli": 1,
     "namaPoli": "Umum",
-    "queues": [
-      {
-        "index": 0,
-        "kodePasien": "U0",
-        "pasien": {
-          "idPasien": 2,
-          "namaPasien": "faqih",
-          "alamat": "semolo",
-          "gender": "p",
-          "TTL": "kalimantan",
-          "NIK": "1231",
-          "BPJS": "213"
-        },
-        "poli": "Umum"
-      }
-    ]
+    "queues": []
   }
 ]
