@@ -37,11 +37,11 @@ public class HomePage extends JFrame {
 
     public void components(){
 
-        JLabel judul = new JLabel("Pendaftaran Puskesmas Online🩺");
-        Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
+        JLabel judul = new JLabel("PUSKESMAS ONLINE");
+        Font font = new Font("Morganite Bold", Font.BOLD, 50);
         judul.setForeground(new Color(133, 88, 111));
         judul.setFont(font);
-        judul.setBounds(310, 180, 300, 40);
+        judul.setBounds(360, 180, 300, 50);
 
         String[] data = {"registrasi pasien", "ambil antrean", "jadwal praktek dokter"};
         int y = 230;
