@@ -20,11 +20,6 @@ public class ModelDokter {
         if (dokters == null){
             this.dokters = new ArrayList<>();
         }
-
-//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-////            System.out.println("\nShutting down. Saving data to JSON file...");
-////            modelGSON.writeToFile(dokters);
-//        }));
     }
 
     public void addDokterModel(Dokter dokter){

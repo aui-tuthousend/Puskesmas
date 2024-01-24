@@ -17,10 +17,6 @@ public class ModelTransaction {
         if (transactions == null){
             this.transactions = new ArrayList<>();
         }
-//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-////            System.out.println("\nShutting down. Saving data to JSON file...");
-//            modelGSON.writeToFile(transactions);
-//        }));
     }
 
     public void modelAddTransaction(Transaction transaction){

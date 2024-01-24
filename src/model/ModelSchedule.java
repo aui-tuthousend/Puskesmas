@@ -2,7 +2,6 @@ package model;
 
 import com.google.gson.reflect.TypeToken;
 import modelGSON.ModelGSON;
-import node.Dokter;
 import node.Schedule;
 
 import java.util.ArrayList;
@@ -19,11 +18,6 @@ public class ModelSchedule {
         if (schedules == null){
             this.schedules = new ArrayList<>();
         }
-
-//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-////            System.out.println("\nShutting down. Saving data to JSON file...");
-//            modelGSON.writeToFile(schedules);
-//        }));
     }
 
     public void addSchedule(Schedule schedule){

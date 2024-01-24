@@ -19,10 +19,6 @@ public class ModelPoli {
         if (polis == null){
             this.polis = new ArrayList<>();
         }
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            System.out.println("\nShutting down. Saving data to JSON file...");
-            modelGSON.writeToFile(polis);
-        }));
     }
 
     public void addPolisModel(Poli poli){

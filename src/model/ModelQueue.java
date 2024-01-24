@@ -19,15 +19,11 @@ public class ModelQueue {
         if (queues == null){
             this.queues = new ArrayList<>();
         }
-
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            System.out.println("\nShutting down. Saving data to JSON file...");
-            modelGSON.writeToFile(queues);
-        }));
     }
 
     public void addQueue(node.Queue queue){
         this.queues.add(queue);
+        modelGSON.writeToFile(queues);
     }
 
 }
