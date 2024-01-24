@@ -2,6 +2,7 @@ package view.admin;
 
 import node.Admin;
 import view.HomePage;
+import view.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,8 +25,11 @@ public class LoginAdmin extends JFrame {
     }
 
     public void component(){
-        JButton back = new JButton("Back");
+        RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(new Color(172, 125, 136));
+        back.setBorderPainted(false);
 
         JLabel judul = new JLabel("Ini Perintah Atmin! ___*( ￣皿￣)/#____");
         judul.setBounds(350, 160, 300, 30);
@@ -42,8 +46,11 @@ public class LoginAdmin extends JFrame {
         pass = new JPasswordField();
         pass.setBounds(350, 270, 200, 30);
 
-        JButton login = new JButton("Login");
+        RoundButton login = new RoundButton("Login");
         login.setBounds(350, 340, 200, 30);
+        login.setForeground(Color.white);
+        login.setBackground(new Color(172, 125, 136));
+        login.setBorderPainted(false);
 
         label = new JLabel();
         label.setBounds(350, 380, 200, 30);

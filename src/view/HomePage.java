@@ -39,7 +39,7 @@ public class HomePage extends JFrame {
 
         JLabel judul = new JLabel("Pendaftaran Puskesmas Online🩺");
         Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
-        judul.setForeground(Color.green);
+        judul.setForeground(new Color(133, 88, 111));
         judul.setFont(font);
         judul.setBounds(310, 180, 300, 40);
 
