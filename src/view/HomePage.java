@@ -3,7 +3,6 @@ package view;
 import controller.DokterController;
 import controller.PoliController;
 import node.Dokter;
-import node.Poli;
 import node.Schedule;
 import view.admin.LoginAdmin;
 import view.pasien.LoginPasien;
@@ -50,7 +49,7 @@ public class HomePage extends JFrame {
             RoundButton button = new RoundButton(txt);
             button.setBounds(350, y, 200, 30);
             button.setForeground(Color.white);
-            button.setBackground(Color.black);
+            button.setBackground(Color.BLUE);
             button.setFocusPainted(false);
             button.setBorderPainted(false);
 
@@ -125,5 +124,13 @@ public class HomePage extends JFrame {
         buttons.get(2).addActionListener(e -> jadwalPraktek());
     }
 
+    public static void main(String[] args) {
+        try {
+            SwingUtilities.invokeLater(HomePage::new);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error Gagal Membuat GUI: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
 
 }

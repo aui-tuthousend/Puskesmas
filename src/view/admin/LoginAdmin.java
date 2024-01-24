@@ -4,6 +4,7 @@ import node.Admin;
 import view.HomePage;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class LoginAdmin extends JFrame {
     JTextField uname;
@@ -19,6 +20,7 @@ public class LoginAdmin extends JFrame {
         setLayout(null);
         setResizable(false);
         component();
+        getContentPane().setBackground(new Color(253, 240, 209));
     }
 
     public void component(){

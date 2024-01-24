@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class DokterController {
     public ModelDokter modelDokter;
     public ModelSchedule modelSchedule;
-    ModelPoli modelPoli;
+    private ModelPoli modelPoli;
 
     public DokterController() {
         this.modelDokter = new ModelDokter();
