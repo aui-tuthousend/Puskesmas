@@ -45,8 +45,7 @@ public class PoliController {
         String k = String.valueOf(poli.charAt(0));
         String kodeP = k+id;
         node.Queue queue = new node.Queue(id, kodeP, pasien, poli);
-        Poli poly = modelPoli.searchPoli(idPoli);
-        transactionController.addTransaction(queue, poly);
+        transactionController.addTransaction(queue, poli);
         modelPoli.addPoliQueue(idPoli, queue);
         modelQueue.addQueue(queue);
 
