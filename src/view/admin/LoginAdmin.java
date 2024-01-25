@@ -21,7 +21,7 @@ public class LoginAdmin extends JFrame {
         setLayout(null);
         setResizable(false);
         component();
-        getContentPane().setBackground(new Color(253, 240, 209));
+        getContentPane().setBackground(new Color(248, 244, 236));
     }
 
     public void component(){

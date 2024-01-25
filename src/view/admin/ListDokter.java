@@ -24,6 +24,8 @@ public class ListDokter extends JFrame {
         poliController = new PoliController();
         setResizable(false);
         component();
+        getContentPane().setBackground(new Color(248, 244, 236));
+
     }
 
     public void component(){

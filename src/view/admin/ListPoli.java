@@ -3,8 +3,10 @@ package view.admin;
 import controller.PoliController;
 import node.Admin;
 import node.Poli;
+import view.RoundButton;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ListPoli extends JFrame {
     PoliController poliController;
@@ -18,31 +20,39 @@ public class ListPoli extends JFrame {
         poliController = new PoliController();
         setResizable(false);
         component();
+        getContentPane().setBackground(new Color(248, 244, 236));
     }
 
     public void component(){
-        getContentPane().removeAll();
-        JButton back = new JButton("Back");
+        RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.black);
 
         JLabel judul = new JLabel("List Poli");
         judul.setBounds(165, 90, 100, 20);
 
-        JButton addPoli = new JButton("+");
+        RoundButton addPoli = new RoundButton("+");
         addPoli.setBounds(225, 90, 50, 25);
+        addPoli.setForeground(Color.white);
+        addPoli.setBackground(Color.black);
 
         int y=130;
         for (Poli poli: poliController.modelPoli.polis){
             JLabel label = new JLabel(poli.namaPoli);
             label.setBounds(165, y, 100, 20);
 
-            JButton edit = new JButton("edit");
+            RoundButton edit = new RoundButton("edit");
             edit.setBounds(265, y, 70, 20);
+            edit.setForeground(Color.white);
+            edit.setBackground(Color.black);
 
             edit.addActionListener(e -> editPoli(poli.idPoli));
 
-            JButton delete = new JButton("delete");
+            RoundButton delete = new RoundButton("delete");
             delete.setBounds(355, y, 70, 20);
+            delete.setForeground(Color.white);
+            delete.setBackground(Color.black);
 
             delete.addActionListener(e -> deletePoli(poli.idPoli));
 
@@ -151,8 +161,5 @@ public class ListPoli extends JFrame {
         ListPoli lispoli = new ListPoli(atmin);
     }
 
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(ListPoli::new);
-//    }
 
 }
