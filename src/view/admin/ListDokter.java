@@ -5,6 +5,7 @@ import controller.PoliController;
 import node.Admin;
 import node.Dokter;
 import node.Poli;
+import view.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,14 +27,18 @@ public class ListDokter extends JFrame {
     }
 
     public void component(){
-        JButton back = new JButton("Back");
+        RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.black);
 
         JLabel judul = new JLabel("List Dokter");
         judul.setBounds(165, 90, 100, 20);
 
-        JButton tambahDokter = new JButton("+");
+        RoundButton tambahDokter = new RoundButton("+");
         tambahDokter.setBounds(235, 90, 50, 25);
+        tambahDokter.setForeground(Color.white);
+        tambahDokter.setBackground(Color.black);
 
         int y=130;
         for (Dokter dokter: dokterController.modelDokter.dokters){
@@ -43,14 +48,20 @@ public class ListDokter extends JFrame {
             JLabel poli = new JLabel(poll.namaPoli);
             poli.setBounds(265, y, 100, 20);
 
-            JButton viewDokter = new JButton("view");
+            RoundButton viewDokter = new RoundButton("view");
             viewDokter.setBounds(350, y, 80, 20);
+            viewDokter.setForeground(Color.white);
+            viewDokter.setBackground(Color.black);
 
-            JButton edit = new JButton("edit");
+            RoundButton edit = new RoundButton("edit");
             edit.setBounds(440, y, 80, 20);
+            edit.setForeground(Color.white);
+            edit.setBackground(Color.black);
 
-            JButton delete = new JButton("hapus");
+            RoundButton delete = new RoundButton("hapus");
             delete.setBounds(530, y, 80, 20);
+            delete.setForeground(Color.white);
+            delete.setBackground(Color.black);
 
             viewDokter.addActionListener(e -> viuDokter(dokter.idDokter, dokter.poli));
             edit.addActionListener(e -> editDok(dokter.idDokter, dokter.poli));
