@@ -2,7 +2,7 @@ package view.admin;
 
 import node.Admin;
 import view.HomePage;
-import view.RoundButton;
+import view.component.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,12 +29,14 @@ public class HomeAdmin extends JFrame {
     public void components(){
         RoundButton back = new RoundButton("LogOut");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.black);
 
         Font font = new Font("HelveticaNeue", Font.ITALIC, 20);
 
         JLabel label = new JLabel("Menu Admin");
         label.setBounds(165, 120, 200, 20);
-        label.setForeground(Color.green);
+        label.setForeground(new Color(31, 23, 23));
         label.setFont(font);
 
 
@@ -44,7 +46,7 @@ public class HomeAdmin extends JFrame {
             RoundButton button = new RoundButton(txt);
             button.setBounds(165, y, 200, 50);
             button.setForeground(Color.white);
-            button.setBackground(Color.gray);
+            button.setBackground(new Color(244, 191, 150));
             button.setBorderPainted(false);
 
             y+=65;

@@ -2,7 +2,8 @@ package view.admin;
 
 import node.Admin;
 import view.HomePage;
-import view.RoundButton;
+import view.component.RoundButton;
+import view.component.RoundJTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,7 +38,7 @@ public class LoginAdmin extends JFrame {
         JLabel username = new JLabel("Input Username");
         username.setBounds(350, 200, 200, 20);
 
-        uname = new JTextField();
+        uname = new RoundJTextField(15);
         uname.setBounds(350, 220, 200, 30);
 
         JLabel pw = new JLabel("Input Password");

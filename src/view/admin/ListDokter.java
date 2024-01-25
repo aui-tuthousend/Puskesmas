@@ -5,7 +5,7 @@ import controller.PoliController;
 import node.Admin;
 import node.Dokter;
 import node.Poli;
-import view.RoundButton;
+import view.component.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,15 +32,15 @@ public class ListDokter extends JFrame {
         RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
         back.setForeground(Color.white);
-        back.setBackground(Color.black);
+        back.setBackground(Color.red);
 
         JLabel judul = new JLabel("List Dokter");
         judul.setBounds(165, 90, 100, 20);
 
         RoundButton tambahDokter = new RoundButton("+");
         tambahDokter.setBounds(235, 90, 50, 25);
-        tambahDokter.setForeground(Color.white);
-        tambahDokter.setBackground(Color.black);
+        tambahDokter.setForeground(Color.black);
+        tambahDokter.setBackground(Color.yellow);
 
         int y=130;
         for (Dokter dokter: dokterController.modelDokter.dokters){

@@ -3,7 +3,7 @@ package view.admin;
 import controller.PoliController;
 import node.Admin;
 import node.Poli;
-import view.RoundButton;
+import view.component.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,15 +27,15 @@ public class ListPoli extends JFrame {
         RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
         back.setForeground(Color.white);
-        back.setBackground(Color.black);
+        back.setBackground(Color.red);
 
         JLabel judul = new JLabel("List Poli");
         judul.setBounds(165, 90, 100, 20);
 
         RoundButton addPoli = new RoundButton("+");
         addPoli.setBounds(225, 90, 50, 25);
-        addPoli.setForeground(Color.white);
-        addPoli.setBackground(Color.black);
+        addPoli.setForeground(Color.black);
+        addPoli.setBackground(Color.yellow);
 
         int y=130;
         for (Poli poli: poliController.modelPoli.polis){

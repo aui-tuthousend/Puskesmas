@@ -6,6 +6,7 @@ import node.Admin;
 import node.Dokter;
 import node.Poli;
 import node.Schedule;
+import view.component.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,12 +30,16 @@ public class ViewDokter extends JFrame {
 
         setResizable(false);
         component();
+        getContentPane().setBackground(new Color(248, 244, 236));
+
     }
 
     public void component(){
         Dokter dokter = dokterController.searchDokter(idDokter);
-        JButton back = new JButton("Back");
+        RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.red);
 
         JLabel judul = new JLabel("Detail Dokter");
         judul.setBounds(350, 150, 300, 20);
@@ -49,8 +54,10 @@ public class ViewDokter extends JFrame {
         JLabel jadPrak = new JLabel("Jadwal Praktek");
         jadPrak.setBounds(200, 230, 200, 30);
 
-        JButton tamba = new JButton("+");
+        RoundButton tamba = new RoundButton("+");
         tamba.setBounds(300, 235, 50, 20);
+        tamba.setForeground(Color.black);
+        tamba.setBackground(Color.yellow);
 
         viewJadwal(dokter);
 
@@ -77,11 +84,15 @@ public class ViewDokter extends JFrame {
             JLabel label = new JLabel(jadwal.hari+" "+jadwal.jam);
             label.setBounds(200, y, 200, 20);
 
-            JButton edit = new JButton("edit");
+            RoundButton edit = new RoundButton("edit");
             edit.setBounds(350, y, 70, 20);
+            edit.setForeground(Color.white);
+            edit.setBackground(Color.black);
 
-            JButton delete = new JButton("delete");
+            RoundButton delete = new RoundButton("delete");
             delete.setBounds(430, y, 70, 20);
+            delete.setForeground(Color.white);
+            delete.setBackground(Color.black);
             y+=30;
 
             edit.addActionListener(e -> editJadual(jadwal.idSchedule, jadwal.hari, jadwal.jam));

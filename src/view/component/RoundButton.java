@@ -1,4 +1,4 @@
-package view;
+package view.component;
 
 import javax.swing.*;
 import java.awt.*;
