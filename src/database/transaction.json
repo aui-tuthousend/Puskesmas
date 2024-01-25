@@ -1,1 +1,97 @@
-[]
+[
+  {
+    "idTransaksi": 0,
+    "antrean": {
+      "index": 0,
+      "kodePasien": "U1",
+      "pasien": {
+        "idPasien": 4,
+        "namaPasien": "teresa",
+        "alamat": "sukoasri",
+        "gender": "P",
+        "TTL": "atas kasur",
+        "NIK": "76",
+        "BPJS": "78"
+      },
+      "poli": "Umum"
+    },
+    "poli": "Umum",
+    "tanggal": "2024-01-25"
+  },
+  {
+    "idTransaksi": 1,
+    "antrean": {
+      "index": 0,
+      "kodePasien": "T1",
+      "pasien": {
+        "idPasien": 3,
+        "namaPasien": "alip",
+        "alamat": "juanda",
+        "gender": "L",
+        "TTL": "tengah waru",
+        "NIK": "9000",
+        "BPJS": ""
+      },
+      "poli": "THT"
+    },
+    "poli": "THT",
+    "tanggal": "2024-01-25"
+  },
+  {
+    "idTransaksi": 2,
+    "antrean": {
+      "index": 1,
+      "kodePasien": "U2",
+      "pasien": {
+        "idPasien": 3,
+        "namaPasien": "alip",
+        "alamat": "juanda",
+        "gender": "L",
+        "TTL": "tengah waru",
+        "NIK": "9000",
+        "BPJS": ""
+      },
+      "poli": "Umum"
+    },
+    "poli": "Umum",
+    "tanggal": "2024-01-25"
+  },
+  {
+    "idTransaksi": 3,
+    "antrean": {
+      "index": 1,
+      "kodePasien": "T2",
+      "pasien": {
+        "idPasien": 4,
+        "namaPasien": "teresa",
+        "alamat": "sukoasri",
+        "gender": "P",
+        "TTL": "atas kasur",
+        "NIK": "76",
+        "BPJS": "78"
+      },
+      "poli": "THT"
+    },
+    "poli": "THT",
+    "tanggal": "2024-01-25"
+  },
+  {
+    "idTransaksi": 4,
+    "antrean": {
+      "index": 2,
+      "kodePasien": "T3",
+      "pasien": {
+        "idPasien": 0,
+        "namaPasien": "el primo",
+        "alamat": "land of dawn",
+        "gender": "L",
+        "TTL": "Sidoarjo, 5 juni 2003",
+        "NIK": "3527",
+        "BPJS": "8230"
+      },
+      "poli": "THT"
+    },
+    "poli": "THT",
+    "tanggal": "2024-01-26"
+  }
+]

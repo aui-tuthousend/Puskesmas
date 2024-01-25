@@ -34,5 +34,14 @@
     "TTL": "tengah waru",
     "NIK": "9000",
     "BPJS": ""
+  },
+  {
+    "idPasien": 4,
+    "namaPasien": "teresa",
+    "alamat": "sukoasri",
+    "gender": "P",
+    "TTL": "atas kasur",
+    "NIK": "76",
+    "BPJS": "78"
   }
 ]

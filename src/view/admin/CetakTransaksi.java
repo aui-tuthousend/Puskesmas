@@ -2,6 +2,7 @@ package view.admin;
 import controller.TransactionController;
 import node.Admin;
 import node.Transaction;
+import view.component.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,11 +22,14 @@ public class CetakTransaksi extends JFrame {
 
         setResizable(false);
         component();
+        getContentPane().setBackground(new Color(248, 244, 236));
     }
 
     public void component(){
-        JButton back = new JButton("Back");
+        RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.black);
 
         JLabel judul = new JLabel("List Transaksi");
         judul.setBounds(165, 90, 100, 20);
@@ -35,8 +39,11 @@ public class CetakTransaksi extends JFrame {
             JLabel label = new JLabel(transaction.poli+" "+transaction.antrean.kodePasien+" "+transaction.antrean.pasien.namaPasien);
             label.setBounds(165, y, 200, 20);
 
-            JButton print = new JButton("cetak");
+            RoundButton print = new RoundButton("cetak");
             print.setBounds(365, y, 100, 20);
+            print.setForeground(Color.white);
+            print.setBackground(Color.black);
+
             print.addActionListener(e -> cetakTransaksi(transaction));
             add(label);
             add(print);

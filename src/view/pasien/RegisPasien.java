@@ -2,9 +2,11 @@ package view.pasien;
 
 import controller.PasienController;
 import view.HomePage;
+import view.component.RoundButton;
 import view.component.RoundJTextField;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class RegisPasien extends JFrame {
@@ -22,14 +24,20 @@ public class RegisPasien extends JFrame {
 
         components();
         setVisible(true);
+        getContentPane().setBackground(new Color(248, 244, 236));
+
     }
 
     public void components(){
-        JButton back = new JButton("Back");
+        RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.black);
 
-        JButton submit = new JButton("Submit");
+        RoundButton submit = new RoundButton("Submit");
         submit.setBounds(160, 450, 90, 30);
+        submit.setForeground(Color.white);
+        submit.setBackground(Color.black);
 
         String[] data = {"Nama Pasien", "Alamat", "Gender [L/P]", "Tempat Tanggal Lahir", "NIK", "BPJS"};
         int y = 80;

@@ -5,8 +5,10 @@ import controller.PoliController;
 import node.Pasien;
 import node.Poli;
 import view.HomePage;
+import view.component.RoundButton;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,15 +35,21 @@ public class PilihPoli extends JFrame {
         setResizable(false);
         component();
         actionHandler();
+        getContentPane().setBackground(new Color(248, 244, 236));
     }
 
     public void component(){
-        JButton back = new JButton("Kembali");
+        RoundButton back = new RoundButton("Kembali");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.black);
+
         int y = 150;
         for (Poli poli: poliController.modelPoli.polis){
-            JButton button = new JButton(poli.namaPoli);
+            RoundButton button = new RoundButton(poli.namaPoli);
             button.setBounds(165, y, 200, 50);
+            button.setForeground(Color.white);
+            button.setBackground(Color.black);
 
             y+=65;
             buttons.add(button);

@@ -2,11 +2,88 @@
   {
     "idPoli": 0,
     "namaPoli": "THT",
-    "queues": []
+    "queues": [
+      {
+        "index": 0,
+        "kodePasien": "T1",
+        "pasien": {
+          "idPasien": 3,
+          "namaPasien": "alip",
+          "alamat": "juanda",
+          "gender": "L",
+          "TTL": "tengah waru",
+          "NIK": "9000",
+          "BPJS": ""
+        },
+        "poli": "THT"
+      },
+      {
+        "index": 1,
+        "kodePasien": "T2",
+        "pasien": {
+          "idPasien": 4,
+          "namaPasien": "teresa",
+          "alamat": "sukoasri",
+          "gender": "P",
+          "TTL": "atas kasur",
+          "NIK": "76",
+          "BPJS": "78"
+        },
+        "poli": "THT"
+      },
+      {
+        "index": 2,
+        "kodePasien": "T3",
+        "pasien": {
+          "idPasien": 0,
+          "namaPasien": "el primo",
+          "alamat": "land of dawn",
+          "gender": "L",
+          "TTL": "Sidoarjo, 5 juni 2003",
+          "NIK": "3527",
+          "BPJS": "8230"
+        },
+        "poli": "THT"
+      }
+    ]
   },
   {
     "idPoli": 1,
     "namaPoli": "Umum",
+    "queues": [
+      {
+        "index": 0,
+        "kodePasien": "U1",
+        "pasien": {
+          "idPasien": 4,
+          "namaPasien": "teresa",
+          "alamat": "sukoasri",
+          "gender": "P",
+          "TTL": "atas kasur",
+          "NIK": "76",
+          "BPJS": "78"
+        },
+        "poli": "Umum"
+      },
+      {
+        "index": 1,
+        "kodePasien": "U2",
+        "pasien": {
+          "idPasien": 3,
+          "namaPasien": "alip",
+          "alamat": "juanda",
+          "gender": "L",
+          "TTL": "tengah waru",
+          "NIK": "9000",
+          "BPJS": ""
+        },
+        "poli": "Umum"
+      }
+    ]
+  },
+  {
+    "idPoli": 2,
+    "namaPoli": "Gigi",
     "queues": []
   }
 ]

@@ -4,13 +4,15 @@ import controller.PasienController;
 import model.ModelPasien;
 import node.Pasien;
 import view.HomePage;
+import view.component.RoundButton;
 import view.component.RoundJTextField;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class LoginPasien extends JFrame {
     JTextField uname;
-    JButton login;
+    RoundButton login;
     JLabel warn;
     PasienController pasienController;
     PilihPoli pilihPoli;
@@ -24,11 +26,14 @@ public class LoginPasien extends JFrame {
 
         setResizable(false);
         component();
+        getContentPane().setBackground(new Color(248, 244, 236));
     }
 
     public void component(){
-        JButton back = new JButton("Back");
+        RoundButton back = new RoundButton("Back");
         back.setBounds(30, 30, 90, 30);
+        back.setForeground(Color.white);
+        back.setBackground(Color.black);
 
         JLabel judul = new JLabel("Ini Ambil Tikek Pasien! ___*( ￣皿￣)/#____");
         judul.setBounds(350, 160, 300, 30);
@@ -39,9 +44,10 @@ public class LoginPasien extends JFrame {
         uname = new RoundJTextField(15);
         uname.setBounds(350, 220, 200, 30);
 
-        login = new JButton("Lanjut");
+        login = new RoundButton("Lanjut");
         login.setBounds(350, 260, 200, 30);
-
+        login.setForeground(Color.white);
+        login.setBackground(Color.black);
 
         warn = new JLabel();
         warn.setBounds(350, 290, 200, 30);

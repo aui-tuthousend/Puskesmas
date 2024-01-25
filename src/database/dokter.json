@@ -6,8 +6,8 @@
     "schedules": [
       {
         "idSchedule": 0,
-        "hari": "bendino",
-        "jam": "pitu",
+        "hari": "everyday",
+        "jam": "08:00-16:00",
         "namaDoketer": "Dr. Soetomo"
       }
     ]
@@ -17,5 +17,18 @@
     "namaDokter": "Dr. Sutrisno",
     "poli": 1,
     "schedules": []
+  },
+  {
+    "idDokter": 2,
+    "namaDokter": "drs. Andrew",
+    "poli": 2,
+    "schedules": [
+      {
+        "idSchedule": 0,
+        "hari": "Sabtu",
+        "jam": "17:00-19:00",
+        "namaDoketer": "drs. Andrew"
+      }
+    ]
   }
 ]
