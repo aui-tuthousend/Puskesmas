@@ -3,6 +3,7 @@ package model;
 import com.google.gson.reflect.TypeToken;
 import modelGSON.ModelGSON;
 import node.Dokter;
+import node.Pasien;
 import node.Poli;
 import node.Queue;
 
@@ -67,6 +68,17 @@ public class ModelPoli {
         } else {
             idx = poli.queues.size()-1;
             return poli.queues.get(idx).index;
+        }
+    }
+
+    public Pasien getLastQueuePasien(int id){
+        Poli poli = polis.get(id);
+        int idx;
+        if (poli.queues.isEmpty()){
+            return null;
+        } else {
+            idx = poli.queues.size()-1;
+            return poli.queues.get(idx).pasien;
         }
     }
 
