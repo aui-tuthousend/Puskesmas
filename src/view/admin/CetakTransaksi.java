@@ -73,7 +73,7 @@ public class CetakTransaksi extends JFrame {
         inputPanel.add(new JLabel("  NIK : "+transaction.antrean.pasien.NIK));
         inputPanel.add(new JLabel("  BPJS : "+transaction.antrean.pasien.BPJS));
         inputPanel.add(new JLabel("  Tanggal : "+transaction.tanggal));
-        inputPanel.add(new JLabel("  Admin : "+atmin.username));
+        inputPanel.add(new JLabel("  Admin : "+atmin.getUsername()));
 
         int result = JOptionPane.showConfirmDialog(this, inputPanel, "Data Transaksi Pasien", JOptionPane.OK_CANCEL_OPTION);
 

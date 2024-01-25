@@ -8,7 +8,7 @@ public class Admin extends User {
     }
 
     @Override
-    protected String getUsername() {
+    public String getUsername() {
         return this.username;
     }
 
