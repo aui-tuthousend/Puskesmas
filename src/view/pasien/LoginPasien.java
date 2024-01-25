@@ -4,6 +4,7 @@ import controller.PasienController;
 import model.ModelPasien;
 import node.Pasien;
 import view.HomePage;
+import view.component.RoundJTextField;
 
 import javax.swing.*;
 
@@ -35,7 +36,7 @@ public class LoginPasien extends JFrame {
         JLabel username = new JLabel("Input NIK/BPJS");
         username.setBounds(350, 200, 200, 20);
 
-        uname = new JTextField();
+        uname = new RoundJTextField(15);
         uname.setBounds(350, 220, 200, 30);
 
         login = new JButton("Lanjut");

@@ -2,6 +2,7 @@ package view.pasien;
 
 import controller.PasienController;
 import view.HomePage;
+import view.component.RoundJTextField;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class RegisPasien extends JFrame {
             JLabel label = new JLabel(val);
             label.setBounds(165, y, 200, 20);
 
-            JTextField txt = new JTextField();
+            JTextField txt = new RoundJTextField(15);
             txt.setBounds(160, y+20, 300, 30);
 
             txtField.add(txt);
