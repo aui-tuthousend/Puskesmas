@@ -10,7 +10,7 @@ public class Main {
             JOptionPane.showMessageDialog(null, "Error Gagal Membuat GUI: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        System.out.println("\nShutting down. Saving data to JSON file...");
+//        System.out.println("\nShutting down. Saving data to JSON file...");
 
     }
 }

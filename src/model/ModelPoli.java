@@ -71,15 +71,14 @@ public class ModelPoli {
         }
     }
 
-    public Pasien getLastQueuePasien(int id){
+    public Boolean getLastQueuePasien(int id, int idPas){
         Poli poli = polis.get(id);
-        int idx;
-        if (poli.queues.isEmpty()){
-            return null;
-        } else {
-            idx = poli.queues.size()-1;
-            return poli.queues.get(idx).pasien;
+        for (Queue queue: poli.queues){
+            if (queue.pasien.idPasien == idPas){
+                return false;
+            }
         }
+        return true;
     }
 
 
