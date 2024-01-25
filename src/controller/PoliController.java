@@ -52,5 +52,15 @@ public class PoliController {
         return id;
     }
 
+    public boolean getLastPasien(int idPoli, int idP){
+        Pasien pasien = modelPoli.getLastQueuePasien(idPoli);
+        if (pasien!=null){
+            if (pasien.idPasien == idP){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }
