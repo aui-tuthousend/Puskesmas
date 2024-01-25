@@ -59,12 +59,18 @@ public class PilihPoli extends JFrame {
         for (Integer id: idPolis){
            buttons.get(id).addActionListener(e -> {
                Pasien pasien = pasienController.searchPasien(idPasien);
-               int q = poliController.addQueue(id, pasien, buttons.get(id).getText())+1;
-               JOptionPane.showMessageDialog(this, "Sukses Mendaftar! \nNo antrean anda: "+q, "Sukses", JOptionPane.INFORMATION_MESSAGE);
+               boolean cek = poliController.getLastPasien(id, idPasien);
+               if (cek){
+                   int q = poliController.addQueue(id, pasien, buttons.get(id).getText())+1;
+                   JOptionPane.showMessageDialog(this, "Sukses Mendaftar! \nNo antrean anda: "+q, "Sukses", JOptionPane.INFORMATION_MESSAGE);
 
-               HomePage homePage = new HomePage();
-               dispose();
-               homePage.setVisible(true);
+                   HomePage homePage = new HomePage();
+                   dispose();
+                   homePage.setVisible(true);
+               } else {
+                JOptionPane.showMessageDialog(null, "Anda sudah daftar di poli ini :D", "Peringatan", JOptionPane.WARNING_MESSAGE);
+               }
+
            });
         }
     }
